@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { getLocalizedContent } from './content';
 import GuideGrid from './components/GuideGrid';
 import Header from './components/Header';
@@ -23,7 +23,7 @@ export default function App() {
   const [activeSectionId, setActiveSectionId] = useState(null);
   const [toast, setToast] = useState('');
   const returnFocusRef = useRef(null);
-  const guide = useMemo(() => getLocalizedContent(language), [language]);
+  const guide = getLocalizedContent(language);
   const activeSection = guide.sections.find(
     (section) => section.id === activeSectionId,
   );
@@ -35,6 +35,10 @@ export default function App() {
           subtitle: guide.emergency.intro,
         }
       : activeSection;
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const changeLanguage = (nextLanguage) => {
     setLanguage(nextLanguage);
@@ -50,6 +54,8 @@ export default function App() {
     returnFocusRef.current = trigger;
     setActiveSectionId(sectionId);
   };
+
+  const closePanel = useCallback(() => setActiveSectionId(null), []);
 
   const copyPassword = async () => {
     try {
@@ -81,6 +87,7 @@ export default function App() {
         brand={guide.brand}
         eyebrow={guide.eyebrow}
         welcome={guide.welcome}
+        languageSelectorLabel={guide.languageSelectorLabel}
         language={language}
         onLanguageChange={changeLanguage}
       />
@@ -108,7 +115,7 @@ export default function App() {
           title={activePanel.title}
           description={activePanel.subtitle}
           closeLabel={guide.close}
-          onClose={() => setActiveSectionId(null)}
+          onClose={closePanel}
           returnFocusRef={returnFocusRef}
         >
           <SectionContent

@@ -25,6 +25,7 @@ export const content = {
     it: {
       languageCode: 'it',
       languageName: 'Italiano',
+      languageSelectorLabel: 'Lingua · Language',
       welcome:
         'Benvenuti. Qui trovate tutto ciò che serve per vivere la casa e la città con semplicità.',
       eyebrow: 'La vostra casa, a portata di mano',
@@ -207,6 +208,7 @@ export const content = {
     en: {
       languageCode: 'en',
       languageName: 'English',
+      languageSelectorLabel: 'Language · Lingua',
       welcome:
         'Welcome. Everything you need to enjoy the home and the city is right here.',
       eyebrow: 'Your home, close at hand',

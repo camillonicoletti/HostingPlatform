@@ -2,12 +2,17 @@ export default function Header({
   brand,
   eyebrow,
   welcome,
+  languageSelectorLabel,
   language,
   onLanguageChange,
 }) {
   return (
     <header className="hero">
-      <div className="language-switch" aria-label="Language · Lingua">
+      <div
+        className="language-switch"
+        role="group"
+        aria-label={languageSelectorLabel}
+      >
         <button
           type="button"
           aria-label="Italiano"

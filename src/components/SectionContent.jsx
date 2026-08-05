@@ -62,10 +62,10 @@ function Wifi({ section, guide, onCopy }) {
 function Home({ section }) {
   return (
     <ul className="info-list">
-      {section.items.slice(0, 5).map((item) => (
+      {section.items.slice(0, 5).map((item, index) => (
         <li key={item.title}>
           <span className="info-list__number" aria-hidden="true">
-            {String(section.items.indexOf(item) + 1).padStart(2, '0')}
+            {String(index + 1).padStart(2, '0')}
           </span>
           <div>
             <h3>{item.title}</h3>

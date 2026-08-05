@@ -22,6 +22,15 @@ describe('guest guide navigation', () => {
     expect(localStorage.getItem('guest-guide-language')).toBe('en');
   });
 
+  test('applies a stored language to the document on first render', () => {
+    localStorage.setItem('guest-guide-language', 'en');
+    document.documentElement.lang = 'it';
+
+    render(<App />);
+
+    expect(document.documentElement).toHaveAttribute('lang', 'en');
+  });
+
   test.each([
     'Arrivo',
     'Wi-Fi',
