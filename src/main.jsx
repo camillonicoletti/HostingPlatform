@@ -1,12 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-
-function ProjectStartingPoint() {
-  return <main>Guest guide</main>;
-}
+import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ProjectStartingPoint />
+    <App />
   </React.StrictMode>,
 );
