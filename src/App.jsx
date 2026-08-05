@@ -1,8 +1,11 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { getLocalizedContent } from './content';
 import GuideGrid from './components/GuideGrid';
 import Header from './components/Header';
+import QuickActions from './components/QuickActions';
+import SectionContent from './components/SectionContent';
 import Sheet from './components/Sheet';
+import Toast from './components/Toast';
 
 const LANGUAGE_KEY = 'guest-guide-language';
 
@@ -18,11 +21,20 @@ function readStoredLanguage() {
 export default function App() {
   const [language, setLanguage] = useState(readStoredLanguage);
   const [activeSectionId, setActiveSectionId] = useState(null);
+  const [toast, setToast] = useState('');
   const returnFocusRef = useRef(null);
   const guide = useMemo(() => getLocalizedContent(language), [language]);
   const activeSection = guide.sections.find(
     (section) => section.id === activeSectionId,
   );
+  const activePanel =
+    activeSectionId === 'emergency'
+      ? {
+          id: 'emergency',
+          title: guide.emergency.title,
+          subtitle: guide.emergency.intro,
+        }
+      : activeSection;
 
   const changeLanguage = (nextLanguage) => {
     setLanguage(nextLanguage);
@@ -38,6 +50,30 @@ export default function App() {
     returnFocusRef.current = trigger;
     setActiveSectionId(sectionId);
   };
+
+  const copyPassword = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(guide.wifi.password);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = guide.wifi.password;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.append(input);
+        input.select();
+        const copied = document.execCommand('copy');
+        input.remove();
+        if (!copied) throw new Error('Copy command failed');
+      }
+      setToast(guide.passwordCopied);
+    } catch {
+      setToast(guide.copyFailed);
+    }
+  };
+
+  const dismissToast = useCallback(() => setToast(''), []);
 
   return (
     <div className="app-shell">
@@ -57,17 +93,32 @@ export default function App() {
         />
       </main>
 
-      {activeSection ? (
+      <QuickActions
+        label={guide.quickActionsLabel}
+        labels={guide.quickActions}
+        links={{
+          whatsapp: guide.contacts.whatsappUrl,
+          location: guide.links.propertyMap,
+        }}
+        onEmergency={(event) => openSection('emergency', event.currentTarget)}
+      />
+
+      {activePanel ? (
         <Sheet
-          title={activeSection.title}
-          description={activeSection.subtitle}
+          title={activePanel.title}
+          description={activePanel.subtitle}
           closeLabel={guide.close}
           onClose={() => setActiveSectionId(null)}
           returnFocusRef={returnFocusRef}
         >
-          <p>{activeSection.subtitle}</p>
+          <SectionContent
+            section={activePanel}
+            guide={guide}
+            onCopy={copyPassword}
+          />
         </Sheet>
       ) : null}
+      {toast ? <Toast message={toast} onDismiss={dismissToast} /> : null}
     </div>
   );
 }
