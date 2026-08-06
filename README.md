@@ -8,7 +8,9 @@ Tutti i testi, indirizzi, contatti, orari, Wi-Fi, ristoranti, attrazioni e colle
 
 `src/content.js`
 
-Cerca `[DA PERSONALIZZARE]` e sostituisci ogni valore. Le sezioni `locale.it` e `locale.en` contengono rispettivamente italiano e inglese; mantieni gli stessi identificatori delle sei sezioni (`arrival`, `wifi`, `home`, `food`, `explore`, `checkout`).
+Cerca `[DA PERSONALIZZARE]` e sostituisci ogni valore. Le sezioni `locale.it` e `locale.en` contengono rispettivamente italiano e inglese; mantieni gli stessi identificatori delle otto sezioni (`checkin`, `wifi`, `rules`, `food`, `transport`, `explore`, `groceries`, `checkout`).
+
+La home mobile mostra Check-in, Wi-Fi, Regole casa, Dove mangiare, Trasporti vicini, Cosa vedere, Supermercati e Check-out. Le informazioni di trasporti e supermercati si modificano negli array `items` delle rispettive sezioni.
 
 Il nome e la località sono in `content.brand`. Il numero WhatsApp, il telefono e l’email sono in `content.contacts`. I collegamenti alla posizione e alla recensione sono in `content.links`.
 

@@ -65,22 +65,29 @@ a:focus-visible {
 }
 
 .app-shell {
-  width: min(100%, 760px);
-  min-height: 100vh;
+  display: grid;
+  width: min(100%, 430px);
+  min-height: 100svh;
   margin: 0 auto;
-  padding: 0 18px calc(100px + env(safe-area-inset-bottom));
+  padding: max(12px, env(safe-area-inset-top)) 14px max(12px, env(safe-area-inset-bottom));
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 10px;
 }
 
 .hero {
-  position: relative;
-  padding: 74px 2px 24px;
+  display: flex;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 2px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .language-switch {
-  position: absolute;
-  top: max(18px, env(safe-area-inset-top));
-  right: 0;
+  position: static;
   display: inline-flex;
+  flex: 0 0 auto;
   gap: 3px;
   padding: 4px;
   border: 1px solid rgba(23, 39, 55, 0.12);
@@ -129,61 +136,39 @@ a:focus-visible {
 }
 
 .hero h1 {
-  max-width: 320px;
+  min-width: 0;
+  max-width: none;
   margin: 0;
-  font-size: clamp(2.15rem, 10vw, 3.4rem);
-  font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
+  overflow: hidden;
+  font-size: clamp(1.55rem, 7vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.location {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin: 14px 0 0;
-  color: var(--terracotta-dark);
-  font-size: 0.84rem;
-  font-weight: 750;
-}
-
-.location::before {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--olive);
-  content: "";
-}
-
-.welcome {
-  max-width: 570px;
-  margin: 20px 0 0;
-  color: var(--night-soft);
-  font-size: 0.98rem;
-  line-height: 1.6;
-}
-
-.guide-main > h2 {
-  margin: 0 0 14px;
-  font-size: 1rem;
-  letter-spacing: -0.015em;
+.guide-main {
+  min-height: 0;
 }
 
 .guide-grid {
   display: grid;
+  height: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 11px;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 9px;
 }
 
 .guide-card {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 112px;
+  min-height: 92px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 15px;
+  padding: 12px;
   overflow: hidden;
   border: 1px solid rgba(23, 39, 55, 0.08);
   border-radius: var(--radius-medium);
@@ -223,8 +208,8 @@ a:focus-visible {
 
 .guide-card__icon {
   display: grid;
-  width: 37px;
-  height: 37px;
+  width: 35px;
+  height: 35px;
   place-items: center;
   border-radius: 12px;
   color: var(--white);
@@ -248,7 +233,7 @@ a:focus-visible {
 }
 
 .guide-card__copy strong {
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   letter-spacing: -0.018em;
   line-height: 1.15;
 }
@@ -256,7 +241,7 @@ a:focus-visible {
 .guide-card__copy small {
   overflow: hidden;
   color: var(--night-soft);
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   line-height: 1.25;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -273,15 +258,12 @@ a:focus-visible {
 }
 
 .quick-actions {
-  position: fixed;
-  right: 10px;
-  bottom: max(10px, env(safe-area-inset-bottom));
-  left: 10px;
+  position: static;
   z-index: 30;
   display: grid;
-  width: auto;
-  max-width: 680px;
-  min-height: 70px;
+  width: 100%;
+  max-width: none;
+  min-height: 64px;
   margin: 0 auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 4px;
@@ -297,7 +279,7 @@ a:focus-visible {
 .quick-actions button {
   display: flex;
   min-width: 0;
-  min-height: 56px;
+  min-height: 52px;
   padding: 5px 3px;
   border: 0;
   border-radius: 17px;
@@ -710,36 +692,13 @@ a:focus-visible {
 }
 
 @media (min-width: 700px) {
-  .app-shell {
-    padding-right: 28px;
-    padding-left: 28px;
-  }
-
-  .hero {
-    padding-top: 90px;
-  }
-
-  .guide-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .guide-card {
-    min-height: 132px;
-    padding: 18px;
-  }
-
-  .guide-card__copy strong {
-    font-size: 1.06rem;
-  }
-
   .sheet-backdrop {
     padding: 6vh 24px;
     align-items: center;
   }
 
   .sheet {
-    width: min(680px, 100%);
+    width: min(430px, 100%);
     max-height: 88vh;
     border-radius: var(--radius-large);
     box-shadow: 0 26px 80px rgba(23, 39, 55, 0.27);
@@ -755,6 +714,65 @@ a:focus-visible {
 
   .sheet__content {
     padding: 24px 26px 28px;
+  }
+}
+
+@media (max-height: 760px) {
+  .app-shell {
+    padding-top: max(8px, env(safe-area-inset-top));
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    gap: 7px;
+  }
+
+  .hero,
+  .language-switch button {
+    min-height: 44px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.42rem, 6.6vw, 1.72rem);
+  }
+
+  .guide-grid {
+    gap: 7px;
+  }
+
+  .guide-card {
+    min-height: 82px;
+    padding: 9px;
+    border-radius: 17px;
+  }
+
+  .guide-card__icon {
+    width: 31px;
+    height: 31px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .guide-card__copy strong {
+    font-size: 0.84rem;
+  }
+
+  .guide-card__copy small {
+    display: none;
+  }
+
+  .guide-card__arrow {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .quick-actions {
+    min-height: 58px;
+    padding: 4px;
+    border-radius: 19px;
+  }
+
+  .quick-actions a,
+  .quick-actions button {
+    min-height: 48px;
+    gap: 3px;
   }
 }
 
