@@ -150,14 +150,17 @@ function Emergency({ guide }) {
 
 export default function SectionContent({ section, guide, onCopy }) {
   switch (section.id) {
-    case 'arrival':
+    case 'checkin':
       return <Arrival section={section} guide={guide} />;
     case 'wifi':
       return <Wifi section={section} guide={guide} onCopy={onCopy} />;
-    case 'home':
+    case 'rules':
       return <Home section={section} />;
     case 'food':
       return <PlaceList items={section.places} guide={guide} type="food" />;
+    case 'transport':
+    case 'groceries':
+      return <PlaceList items={section.items} guide={guide} type="nearby" />;
     case 'explore':
       return (
         <PlaceList

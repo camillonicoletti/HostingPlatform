@@ -1,6 +1,6 @@
 export const content = {
   brand: {
-    name: '[DA PERSONALIZZARE] Casa Terracotta',
+    name: 'CASA BAIOCCO',
     location: '[DA PERSONALIZZARE] Roma, Italia',
   },
   contacts: {

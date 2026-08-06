@@ -85,14 +85,11 @@ export default function App() {
     <div className="app-shell">
       <Header
         brand={guide.brand}
-        eyebrow={guide.eyebrow}
-        welcome={guide.welcome}
         languageSelectorLabel={guide.languageSelectorLabel}
         language={language}
         onLanguageChange={changeLanguage}
       />
       <main className="guide-main">
-        <h2>{guide.guidePrompt}</h2>
         <GuideGrid
           sections={guide.sections}
           openSectionLabel={guide.openSection}

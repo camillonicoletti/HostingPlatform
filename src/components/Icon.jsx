@@ -1,9 +1,11 @@
 const glyphs = {
-  arrival: '⌖',
+  checkin: '⌖',
   wifi: '⌁',
-  home: '⌂',
+  rules: '⌂',
   food: '◇',
+  transport: '⇄',
   explore: '☼',
+  groceries: '▤',
   checkout: '✓',
   close: '×',
   arrow: '↗',

@@ -18,7 +18,7 @@ describe('guest guide navigation', () => {
 
     await user.click(screen.getByRole('button', { name: 'English' }));
 
-    expect(screen.getByRole('button', { name: /Arrival/ })).toBeVisible();
+    expect(screen.getByRole('button', { name: /Check-in/ })).toBeVisible();
     expect(localStorage.getItem('guest-guide-language')).toBe('en');
   });
 
@@ -31,12 +31,36 @@ describe('guest guide navigation', () => {
     expect(document.documentElement).toHaveAttribute('lang', 'en');
   });
 
+  test('shows CASA BAIOCCO and the eight categories in the requested order', () => {
+    render(<App />);
+
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'CASA BAIOCCO',
+    );
+    expect(
+      screen
+        .getAllByTestId('guide-card')
+        .map((button) => button.dataset.sectionId),
+    ).toEqual([
+      'checkin',
+      'wifi',
+      'rules',
+      'food',
+      'transport',
+      'explore',
+      'groceries',
+      'checkout',
+    ]);
+  });
+
   test.each([
-    'Arrivo',
+    'Check-in',
     'Wi-Fi',
-    'La casa',
+    'Regole casa',
     'Dove mangiare',
+    'Trasporti vicini',
     'Cosa vedere',
+    'Supermercati',
     'Check-out',
   ])('opens and closes the %s sheet', async (label) => {
     const user = userEvent.setup();
@@ -66,6 +90,20 @@ describe('guest guide navigation', () => {
     );
   });
 
+  test.each(['Trasporti vicini', 'Supermercati'])(
+    'shows configurable places in the %s sheet',
+    async (label) => {
+      const user = userEvent.setup();
+      render(<App />);
+
+      await user.click(screen.getByRole('button', { name: new RegExp(label) }));
+
+      expect(
+        screen.getAllByRole('link', { name: 'Apri in Google Maps' }),
+      ).not.toHaveLength(0);
+    },
+  );
+
   test('shows emergency numbers without starting a call', async () => {
     const user = userEvent.setup();
     render(<App />);
@@ -78,11 +116,11 @@ describe('guest guide navigation', () => {
     ).not.toBeInTheDocument();
   });
 
-  test('offers a protected Google Maps link from the arrival sheet', async () => {
+  test('offers a protected Google Maps link from the check-in sheet', async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await user.click(screen.getByRole('button', { name: /Arrivo/ }));
+    await user.click(screen.getByRole('button', { name: /Check-in/ }));
     const mapLink = screen.getByRole('link', {
       name: 'Apri in Google Maps',
     });

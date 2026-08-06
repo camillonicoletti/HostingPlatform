@@ -8,6 +8,7 @@ export default function GuideGrid({ sections, openSectionLabel, onOpen }) {
           className={`guide-card guide-card--${section.id}`}
           type="button"
           key={section.id}
+          data-testid="guide-card"
           data-section-id={section.id}
           aria-label={`${section.title}. ${section.subtitle}. ${openSectionLabel}`}
           onClick={(event) => onOpen(section.id, event.currentTarget)}

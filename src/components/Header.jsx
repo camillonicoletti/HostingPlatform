@@ -1,7 +1,5 @@
 export default function Header({
   brand,
-  eyebrow,
-  welcome,
   languageSelectorLabel,
   language,
   onLanguageChange,
@@ -30,10 +28,7 @@ export default function Header({
           EN
         </button>
       </div>
-      <p className="eyebrow">{eyebrow}</p>
       <h1>{brand.name}</h1>
-      <p className="location">{brand.location}</p>
-      <p className="welcome">{welcome}</p>
     </header>
   );
 }
