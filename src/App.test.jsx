@@ -47,7 +47,7 @@ describe('guest guide navigation', () => {
       'rules',
       'food',
       'transport',
-      'explore',
+      'pharmacies',
       'groceries',
       'checkout',
     ]);
@@ -59,7 +59,7 @@ describe('guest guide navigation', () => {
     'Regole casa',
     'Dove mangiare',
     'Trasporti vicini',
-    'Cosa vedere',
+    'Farmacie di emergenza',
     'Supermercati',
     'Check-out',
   ])('opens and closes the %s sheet', async (label) => {
@@ -90,7 +90,11 @@ describe('guest guide navigation', () => {
     );
   });
 
-  test.each(['Trasporti vicini', 'Supermercati'])(
+  test.each([
+    'Trasporti vicini',
+    'Farmacie di emergenza',
+    'Supermercati',
+  ])(
     'shows configurable places in the %s sheet',
     async (label) => {
       const user = userEvent.setup();

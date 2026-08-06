@@ -12,7 +12,7 @@ describe('guest guide content', () => {
       'rules',
       'food',
       'transport',
-      'explore',
+      'pharmacies',
       'groceries',
       'checkout',
     ]);
@@ -22,7 +22,7 @@ describe('guest guide content', () => {
       'rules',
       'food',
       'transport',
-      'explore',
+      'pharmacies',
       'groceries',
       'checkout',
     ]);
