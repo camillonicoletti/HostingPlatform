@@ -7,19 +7,23 @@ describe('guest guide content', () => {
     const en = getLocalizedContent('en');
 
     expect(it?.sections.map((section) => section.id)).toEqual([
-      'arrival',
+      'checkin',
       'wifi',
-      'home',
+      'rules',
       'food',
+      'transport',
       'explore',
+      'groceries',
       'checkout',
     ]);
     expect(en?.sections.map((section) => section.id)).toEqual([
-      'arrival',
+      'checkin',
       'wifi',
-      'home',
+      'rules',
       'food',
+      'transport',
       'explore',
+      'groceries',
       'checkout',
     ]);
     expect(it?.welcome).not.toBe(en?.welcome);

@@ -44,9 +44,9 @@ export const content = {
       },
       sections: [
         {
-          id: 'arrival',
-          title: 'Arrivo',
-          subtitle: 'Indirizzo e check-in',
+          id: 'checkin',
+          title: 'Check-in',
+          subtitle: 'Arrivo e accesso',
           addressLabel: 'Indirizzo',
           address: '[DA PERSONALIZZARE] Via dell’Ospitalità 10, Roma',
           checkInLabel: 'Check-in',
@@ -67,8 +67,8 @@ export const content = {
           note: 'La rete è disponibile in tutta la casa.',
         },
         {
-          id: 'home',
-          title: 'La casa',
+          id: 'rules',
+          title: 'Regole casa',
           subtitle: 'Le cose essenziali',
           items: [
             {
@@ -137,6 +137,31 @@ export const content = {
           ],
         },
         {
+          id: 'transport',
+          title: 'Trasporti vicini',
+          subtitle: 'Come muoversi',
+          items: [
+            {
+              name: '[DA PERSONALIZZARE] Fermata autobus',
+              description: '[DA PERSONALIZZARE] Linee utili per raggiungere il centro e la stazione.',
+              distance: '[DA PERSONALIZZARE] 4 min a piedi',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20fermata%20autobus',
+            },
+            {
+              name: '[DA PERSONALIZZARE] Stazione ferroviaria',
+              description: '[DA PERSONALIZZARE] Collegamenti regionali e nazionali.',
+              distance: '[DA PERSONALIZZARE] 1,5 km',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20stazione%20ferroviaria',
+            },
+            {
+              name: '[DA PERSONALIZZARE] Punto taxi',
+              description: '[DA PERSONALIZZARE] Taxi e transfer disponibili su prenotazione.',
+              distance: '[DA PERSONALIZZARE] 8 min a piedi',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20punto%20taxi',
+            },
+          ],
+        },
+        {
           id: 'explore',
           title: 'Cosa vedere',
           subtitle: 'Luoghi e attività vicini',
@@ -176,6 +201,31 @@ export const content = {
               description: '[DA PERSONALIZZARE] Percorso facile, piacevole nelle ore più fresche.',
               distance: '[DA PERSONALIZZARE] 3 km',
               map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Passeggiata%20sul%20fiume',
+            },
+          ],
+        },
+        {
+          id: 'groceries',
+          title: 'Supermercati',
+          subtitle: 'Spesa nelle vicinanze',
+          items: [
+            {
+              name: '[DA PERSONALIZZARE] Supermercato Centro',
+              description: '[DA PERSONALIZZARE] Supermercato completo, aperto tutti i giorni.',
+              distance: '[DA PERSONALIZZARE] 6 min a piedi',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20supermercato',
+            },
+            {
+              name: '[DA PERSONALIZZARE] Alimentari Baiocco',
+              description: '[DA PERSONALIZZARE] Piccolo negozio per acquisti rapidi e prodotti locali.',
+              distance: '[DA PERSONALIZZARE] 3 min a piedi',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20alimentari',
+            },
+            {
+              name: '[DA PERSONALIZZARE] Mercato rionale',
+              description: '[DA PERSONALIZZARE] Frutta, verdura e prodotti freschi al mattino.',
+              distance: '[DA PERSONALIZZARE] 10 min a piedi',
+              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20mercato%20rionale',
             },
           ],
         },
@@ -227,9 +277,9 @@ export const content = {
       },
       sections: [
         {
-          id: 'arrival',
-          title: 'Arrival',
-          subtitle: 'Address and check-in',
+          id: 'checkin',
+          title: 'Check-in',
+          subtitle: 'Arrival and access',
           addressLabel: 'Address',
           address: '[DA PERSONALIZZARE] 10 Hospitality Street, Rome',
           checkInLabel: 'Check-in',
@@ -249,8 +299,8 @@ export const content = {
           note: 'The network is available throughout the home.',
         },
         {
-          id: 'home',
-          title: 'The home',
+          id: 'rules',
+          title: 'House rules',
           subtitle: 'The essentials',
           items: [
             { title: 'Climate', text: '[DA PERSONALIZZARE] The air-conditioning control is by the entrance.' },
@@ -274,6 +324,16 @@ export const content = {
           ],
         },
         {
+          id: 'transport',
+          title: 'Nearby transport',
+          subtitle: 'Getting around',
+          items: [
+            { name: '[DA PERSONALIZZARE] Bus stop', description: '[DA PERSONALIZZARE] Useful routes to the centre and railway station.', distance: '[DA PERSONALIZZARE] 4 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20fermata%20autobus' },
+            { name: '[DA PERSONALIZZARE] Railway station', description: '[DA PERSONALIZZARE] Regional and national connections.', distance: '[DA PERSONALIZZARE] 1.5 km', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20stazione%20ferroviaria' },
+            { name: '[DA PERSONALIZZARE] Taxi rank', description: '[DA PERSONALIZZARE] Taxis and transfers available by reservation.', distance: '[DA PERSONALIZZARE] 8 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20punto%20taxi' },
+          ],
+        },
+        {
           id: 'explore',
           title: 'What to see',
           subtitle: 'Nearby places and activities',
@@ -284,6 +344,16 @@ export const content = {
             { name: '[DA PERSONALIZZARE] Viewpoint', description: '[DA PERSONALIZZARE] The best place for a sunset photo.', distance: '[DA PERSONALIZZARE] 2 km', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Belvedere' },
             { name: '[DA PERSONALIZZARE] Local Market', description: '[DA PERSONALIZZARE] Local stalls and fresh produce until lunchtime.', distance: '[DA PERSONALIZZARE] 10 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Mercato%20rionale' },
             { name: '[DA PERSONALIZZARE] Riverside Walk', description: '[DA PERSONALIZZARE] An easy route, best during cooler hours.', distance: '[DA PERSONALIZZARE] 3 km', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Passeggiata%20sul%20fiume' },
+          ],
+        },
+        {
+          id: 'groceries',
+          title: 'Supermarkets',
+          subtitle: 'Groceries nearby',
+          items: [
+            { name: '[DA PERSONALIZZARE] Central Supermarket', description: '[DA PERSONALIZZARE] Full supermarket, open every day.', distance: '[DA PERSONALIZZARE] 6 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20supermercato' },
+            { name: '[DA PERSONALIZZARE] Baiocco Grocery', description: '[DA PERSONALIZZARE] Small shop for quick purchases and local products.', distance: '[DA PERSONALIZZARE] 3 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20alimentari' },
+            { name: '[DA PERSONALIZZARE] Local Market', description: '[DA PERSONALIZZARE] Fruit, vegetables and fresh products in the morning.', distance: '[DA PERSONALIZZARE] 10 min walk', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20mercato%20rionale' },
           ],
         },
         {
