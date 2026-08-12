@@ -113,7 +113,7 @@ export const content = {
         },
         {
           id: 'food',
-          title: 'Dove mangiare nei dintorni',
+          title: 'Numeri e App Utili',
           subtitle: 'Sei indirizzi scelti per voi',
           places: [
             {
@@ -392,7 +392,7 @@ export const content = {
         },
         {
           id: 'food',
-          title: 'Where to eat nearby',
+          title: 'Useful Numbers and Apps',
           subtitle: 'Six places selected for you',
           places: [
             { name: '[DA PERSONALIZZARE] Trattoria del Vicolo', category: '[DA PERSONALIZZARE] Roman cuisine', tip: '[DA PERSONALIZZARE] Great for a relaxed dinner; try the dish of the day.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Trattoria%20del%20Vicolo' },
