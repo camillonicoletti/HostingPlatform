@@ -89,6 +89,44 @@ function PlaceList({ items, guide, type }) {
   );
 }
 
+function UsefulNumbersPanel({ items }) {
+  return (
+    <ul className="place-list useful-list">
+      {items.map((item) => (
+        <li className="place-card useful-card" key={item.name}>
+          <div className="place-card__topline">
+            <h3>{item.name}</h3>
+            <span className="distance">{item.badge}</span>
+          </div>
+          <p>{item.description}</p>
+          {item.hours && (
+            <ul className="useful-hours">
+              {item.hours.map((hours) => (
+                <li key={hours}>{hours}</li>
+              ))}
+            </ul>
+          )}
+          <div className="useful-actions">
+            {item.actions.map((action) => (
+              <a
+                className="text-link"
+                href={action.href}
+                key={action.href}
+                {...(action.href.startsWith('http')
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+              >
+                {action.label}
+                <Icon name="arrow" />
+              </a>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Checkout({ section, guide }) {
   return (
     <>
@@ -161,7 +199,7 @@ export default function SectionContent({
     case 'rules':
       return <Home section={section} />;
     case 'food':
-      return <PlaceList items={section.places} guide={guide} type="food" />;
+      return <UsefulNumbersPanel items={section.contacts} />;
     case 'transport':
       return <TransportPanel section={section} guide={guide} />;
     case 'groceries':

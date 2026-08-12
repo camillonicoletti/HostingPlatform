@@ -114,43 +114,44 @@ export const content = {
         {
           id: 'food',
           title: 'Numeri e App Utili',
-          subtitle: 'Sei indirizzi scelti per voi',
-          places: [
+          subtitle: 'Contatti e servizi essenziali per il soggiorno',
+          contacts: [
             {
-              name: '[DA PERSONALIZZARE] Trattoria del Vicolo',
-              category: '[DA PERSONALIZZARE] Cucina romana',
-              tip: '[DA PERSONALIZZARE] Ideale per una cena informale; provate il piatto del giorno.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Trattoria%20del%20Vicolo',
+              name: 'Guardia medica',
+              badge: '116117',
+              description: 'Servizio di continuità assistenziale.',
+              hours: [
+                'Notti feriali e festive: dalle 20:00 alle 08:00.',
+                'Sabato e giorni prefestivi: dalle 10:00 alle 20:00.',
+                'Domenica e giorni festivi: dalle 08:00 alle 20:00.',
+              ],
+              actions: [{ label: 'Chiama 116117', href: 'tel:116117' }],
             },
             {
-              name: '[DA PERSONALIZZARE] Forno della Piazza',
-              category: '[DA PERSONALIZZARE] Panificio',
-              tip: '[DA PERSONALIZZARE] Perfetto per colazione e pizza al taglio.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Forno%20della%20Piazza',
+              name: 'Emergenze',
+              badge: '112',
+              description: 'Numero unico europeo per le emergenze.',
+              actions: [{ label: 'Chiama 112', href: 'tel:112' }],
             },
             {
-              name: '[DA PERSONALIZZARE] L’Oliva',
-              category: '[DA PERSONALIZZARE] Vegetariano',
-              tip: '[DA PERSONALIZZARE] Piatti stagionali e ottime opzioni senza glutine.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20L%27Oliva',
+              name: 'Taxi',
+              badge: '06 3570',
+              description: 'Chiama il radiotaxi oppure prenota dall’app.',
+              actions: [
+                { label: 'Chiama 06 3570', href: 'tel:063570' },
+                { label: 'Scarica App ITTAXI', href: 'https://www.ittaxi.it/' },
+              ],
             },
             {
-              name: '[DA PERSONALIZZARE] Bottega 12',
-              category: '[DA PERSONALIZZARE] Enoteca',
-              tip: '[DA PERSONALIZZARE] Buona scelta per un aperitivo tranquillo.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Bottega%2012',
-            },
-            {
-              name: '[DA PERSONALIZZARE] Gelateria Fiore',
-              category: '[DA PERSONALIZZARE] Gelateria',
-              tip: '[DA PERSONALIZZARE] Gusti artigianali e sorbetti alla frutta.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Gelateria%20Fiore',
-            },
-            {
-              name: '[DA PERSONALIZZARE] Terrazza Verde',
-              category: '[DA PERSONALIZZARE] Ristorante panoramico',
-              tip: '[DA PERSONALIZZARE] Prenotate un tavolo esterno al tramonto.',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Terrazza%20Verde',
+              name: 'App ATAC Roma',
+              badge: 'iOS · Android',
+              description: 'Consulta trasporti pubblici, orari e tempi di arrivo a Roma.',
+              actions: [
+                {
+                  label: 'Scarica App ATAC Roma',
+                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                },
+              ],
             },
           ],
         },
@@ -393,14 +394,45 @@ export const content = {
         {
           id: 'food',
           title: 'Useful Numbers and Apps',
-          subtitle: 'Six places selected for you',
-          places: [
-            { name: '[DA PERSONALIZZARE] Trattoria del Vicolo', category: '[DA PERSONALIZZARE] Roman cuisine', tip: '[DA PERSONALIZZARE] Great for a relaxed dinner; try the dish of the day.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Trattoria%20del%20Vicolo' },
-            { name: '[DA PERSONALIZZARE] Forno della Piazza', category: '[DA PERSONALIZZARE] Bakery', tip: '[DA PERSONALIZZARE] Perfect for breakfast and pizza by the slice.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Forno%20della%20Piazza' },
-            { name: '[DA PERSONALIZZARE] L’Oliva', category: '[DA PERSONALIZZARE] Vegetarian', tip: '[DA PERSONALIZZARE] Seasonal dishes and good gluten-free options.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20L%27Oliva' },
-            { name: '[DA PERSONALIZZARE] Bottega 12', category: '[DA PERSONALIZZARE] Wine bar', tip: '[DA PERSONALIZZARE] A good choice for a quiet aperitivo.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Bottega%2012' },
-            { name: '[DA PERSONALIZZARE] Gelateria Fiore', category: '[DA PERSONALIZZARE] Gelateria', tip: '[DA PERSONALIZZARE] Artisan flavours and fresh fruit sorbets.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Gelateria%20Fiore' },
-            { name: '[DA PERSONALIZZARE] Terrazza Verde', category: '[DA PERSONALIZZARE] Panoramic restaurant', tip: '[DA PERSONALIZZARE] Reserve an outdoor table at sunset.', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20Terrazza%20Verde' },
+          subtitle: 'Essential contacts and services for your stay',
+          contacts: [
+            {
+              name: 'Out-of-hours medical service',
+              badge: '116117',
+              description: 'Medical care service outside regular hours.',
+              hours: [
+                'Weeknights and public holidays: from 8:00 pm to 8:00 am.',
+                'Saturdays and days before public holidays: from 10:00 am to 8:00 pm.',
+                'Sundays and public holidays: from 8:00 am to 8:00 pm.',
+              ],
+              actions: [{ label: 'Call 116117', href: 'tel:116117' }],
+            },
+            {
+              name: 'Emergencies',
+              badge: '112',
+              description: 'European single emergency number.',
+              actions: [{ label: 'Call 112', href: 'tel:112' }],
+            },
+            {
+              name: 'Taxi',
+              badge: '06 3570',
+              description: 'Call the radio taxi or book through the app.',
+              actions: [
+                { label: 'Call 06 3570', href: 'tel:063570' },
+                { label: 'Download ITTAXI App', href: 'https://www.ittaxi.it/' },
+              ],
+            },
+            {
+              name: 'ATAC Roma App',
+              badge: 'iOS · Android',
+              description: 'Check public transport, schedules and arrival times in Rome.',
+              actions: [
+                {
+                  label: 'Download ATAC Roma App',
+                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                },
+              ],
+            },
           ],
         },
         {
