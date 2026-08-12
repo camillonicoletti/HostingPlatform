@@ -611,9 +611,20 @@ export const content = {
 
 export function getLocalizedContent(language) {
   const selected = content.locale[language] ?? content.locale.it;
+  const sections = [...selected.sections];
+  const banksIndex = sections.findIndex((section) => section.id === 'food');
+  const supermarketsIndex = sections.findIndex(
+    (section) => section.id === 'groceries',
+  );
+
+  [sections[banksIndex], sections[supermarketsIndex]] = [
+    sections[supermarketsIndex],
+    sections[banksIndex],
+  ];
 
   return {
     ...selected,
+    sections,
     brand: content.brand,
     contacts: content.contacts,
     links: content.links,
