@@ -31,11 +31,11 @@ describe('guest guide navigation', () => {
     expect(document.documentElement).toHaveAttribute('lang', 'en');
   });
 
-  test('shows La mia Casa and the eight categories in the requested order', () => {
+  test('shows LA MIA CASA and the eight categories in the requested order', () => {
     render(<App />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'La mia Casa',
+      'LA MIA CASA',
     );
     expect(
       screen

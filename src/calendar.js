@@ -92,7 +92,7 @@ export function buildIcsCalendar(schedule, labels, now = new Date()) {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//La mia Casa//Guest Guide//IT',
+    'PRODID:-//LA MIA CASA//Guest Guide//IT',
     'CALSCALE:GREGORIAN',
     ...events,
     'END:VCALENDAR',
