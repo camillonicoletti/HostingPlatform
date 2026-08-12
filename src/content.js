@@ -13,7 +13,7 @@ export const content = {
   },
   links: {
     propertyMap:
-      'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20indirizzo%20struttura',
+      'https://www.google.com/maps/search/?api=1&query=Via%20Tullio%20Ascarelli%2C%2099%20-%20Roma',
     review:
       'https://www.google.com/search?q=%5BDA%20PERSONALIZZARE%5D%20link%20recensione',
   },
