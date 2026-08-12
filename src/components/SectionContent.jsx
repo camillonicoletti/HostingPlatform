@@ -44,7 +44,6 @@ function Arrival({ section, guide }) {
         <Detail label={section.instructionsLabel}>
           {section.instructions}
         </Detail>
-        <Detail label={section.parkingLabel}>{section.parking}</Detail>
       </dl>
       <ExternalLink href={guide.links.propertyMap}>{guide.maps}</ExternalLink>
     </>

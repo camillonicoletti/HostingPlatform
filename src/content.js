@@ -63,8 +63,6 @@ export const content = {
           instructionsLabel: 'Come entrare',
           instructions:
             'All’arrivo troverai una persona che ti accoglierà e ti consegnerà le chiavi di casa.',
-          parkingLabel: 'Parcheggio',
-          parking: 'Parcheggio pubblico disponibile nella via.',
         },
         {
           id: 'wifi',
@@ -348,8 +346,6 @@ export const content = {
           instructionsLabel: 'How to enter',
           instructions:
             'When you arrive, someone will welcome you and give you the house keys.',
-          parkingLabel: 'Parking',
-          parking: 'Public parking is available on the street.',
         },
         {
           id: 'wifi',
