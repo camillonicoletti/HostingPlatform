@@ -144,7 +144,7 @@ export const content = {
         },
         {
           id: 'transport',
-          title: 'Trasporti vicini',
+          title: 'Trasporti',
           subtitle: 'Linea bus vicino casa',
           stopLabel: 'Punto di partenza',
           directionLabel: 'Direzione',
@@ -152,7 +152,7 @@ export const content = {
           moovit: 'Apri orari e fermate',
           lines: [
             {
-              name: 'Linea 906',
+              name: 'Linea 906 · Vicino a me',
               color: '#a94e34',
               stop: 'Via Tullio Ascarelli',
               direction: 'Valle Aurelia (Metro A - FL3) / Casale Lumbroso-Fontebasso',
@@ -446,7 +446,7 @@ export const content = {
         },
         {
           id: 'transport',
-          title: 'Nearby transport',
+          title: 'Transport',
           subtitle: 'Bus line near the house',
           stopLabel: 'Starting point',
           directionLabel: 'Direction',
@@ -454,7 +454,7 @@ export const content = {
           moovit: 'Open times and stops',
           lines: [
             {
-              name: 'Line 906',
+              name: 'Line 906 · Near me',
               color: '#a94e34',
               stop: 'Via Tullio Ascarelli',
               direction: 'Valle Aurelia (Metro A - FL3) / Casale Lumbroso-Fontebasso',
