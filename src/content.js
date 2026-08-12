@@ -79,7 +79,7 @@ export const content = {
           items: [
             {
               title: 'Rispetto degli altri',
-              text: 'Mantenere sempre un comportamento educato e rispettoso. Evitare schiamazzi, musica ad alto volume e rumori molesti, soprattutto nelle ore serali e notturne. Rispettare la privacy degli altri ospiti. Si raccomanda di mantenere un comportamento rispettoso anche nelle aree condominiali, evitando rumori e comportamenti che possano arrecare disturbo ai vicini.',
+              text: 'Mantenere sempre un comportamento educato e rispettoso. Evitare schiamazzi, musica ad alto volume e rumori molesti, soprattutto nelle ore serali e notturne. Rispettare la privacy degli altri ospiti.',
             },
             {
               title: 'Pulizia della propria stanza',
@@ -374,7 +374,7 @@ export const content = {
           items: [
             {
               title: 'Respect for others',
-              text: 'Always behave politely and respectfully. Avoid shouting, loud music and disturbing noise, especially in the evening and at night. Respect the privacy of other guests. Please also behave respectfully in the shared areas of the building, avoiding noise and conduct that may disturb the neighbours.',
+              text: 'Always behave politely and respectfully. Avoid shouting, loud music and disturbing noise, especially in the evening and at night. Respect the privacy of other guests.',
             },
             {
               title: 'Keeping your room clean',
