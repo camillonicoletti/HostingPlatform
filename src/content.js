@@ -56,16 +56,15 @@ export const content = {
           addressLabel: 'Indirizzo',
           address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
-          checkIn: '[DA PERSONALIZZARE] dalle 15:00 alle 20:00',
+          checkIn: 'Ricordati di comunicare all’Host l’orario del tuo arrivo a casa.',
           housePhoto: '',
           housePhotoAlt: '[DA PERSONALIZZARE] Facciata di LA MIA CASA',
           housePhotoFallback: 'Foto della casa in arrivo',
           instructionsLabel: 'Come entrare',
           instructions:
-            '[DA PERSONALIZZARE] Avvisateci 30 minuti prima dell’arrivo. Il codice di accesso verrà inviato privatamente prima del check-in.',
+            'All’arrivo troverai una persona che ti accoglierà e ti consegnerà le chiavi di casa.',
           parkingLabel: 'Parcheggio',
-          parking:
-            '[DA PERSONALIZZARE] Parcheggio pubblico disponibile nella via adiacente.',
+          parking: 'Parcheggio pubblico disponibile nella via.',
         },
         {
           id: 'wifi',
@@ -342,15 +341,15 @@ export const content = {
           addressLabel: 'Address',
           address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
-          checkIn: '[DA PERSONALIZZARE] from 3:00 pm to 8:00 pm',
+          checkIn: 'Remember to tell the Host what time you will arrive at the house.',
           housePhoto: '',
           housePhotoAlt: '[DA PERSONALIZZARE] LA MIA CASA exterior',
           housePhotoFallback: 'House photo coming soon',
           instructionsLabel: 'How to enter',
           instructions:
-            '[DA PERSONALIZZARE] Let us know 30 minutes before arrival. The access code will be sent privately before check-in.',
+            'When you arrive, someone will welcome you and give you the house keys.',
           parkingLabel: 'Parking',
-          parking: '[DA PERSONALIZZARE] Public parking is available on the next street.',
+          parking: 'Public parking is available on the street.',
         },
         {
           id: 'wifi',
