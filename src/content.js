@@ -78,24 +78,36 @@ export const content = {
           subtitle: 'Le cose essenziali',
           items: [
             {
-              title: 'Clima',
-              text: '[DA PERSONALIZZARE] Il comando dell’aria condizionata è vicino all’ingresso.',
+              title: 'Rispetto degli altri',
+              text: 'Mantenere sempre un comportamento educato e rispettoso. Evitare schiamazzi, musica ad alto volume e rumori molesti, soprattutto nelle ore serali e notturne. Rispettare la privacy degli altri ospiti. Si raccomanda di mantenere un comportamento rispettoso anche nelle aree condominiali, evitando rumori e comportamenti che possano arrecare disturbo ai vicini.',
             },
             {
-              title: 'Elettrodomestici',
-              text: '[DA PERSONALIZZARE] Cucina, forno, lavastoviglie e lavatrice sono a disposizione.',
+              title: 'Pulizia della propria stanza',
+              text: 'Ogni ospite è tenuto a mantenere la propria camera in ordine e pulita durante il soggiorno. Non lasciare cibo deperibile o rifiuti all’interno della stanza. Prima della partenza verificare di non aver dimenticato effetti personali.',
             },
             {
-              title: 'Raccolta differenziata',
-              text: '[DA PERSONALIZZARE] I contenitori sono sotto il lavello; il calendario è sul frigorifero.',
+              title: 'Utilizzo degli spazi comuni',
+              text: 'Gli spazi comuni sono a disposizione di tutti gli ospiti. Si chiede di lasciarli puliti e ordinati dopo ogni utilizzo e di riporre eventuali oggetti personali al termine dell’uso.',
             },
             {
-              title: 'Silenzio',
-              text: '[DA PERSONALIZZARE] Evitate rumori dalle 22:00 alle 08:00.',
+              title: 'Cucina',
+              text: 'Lavare, asciugare e riporre stoviglie, pentole e utensili subito dopo l’utilizzo. Pulire il piano di lavoro e gli elettrodomestici utilizzati. Conservare gli alimenti in modo ordinato e nel rispetto degli altri ospiti. Non utilizzare alimenti appartenenti ad altri ospiti.',
             },
             {
-              title: 'In casa',
-              text: '[DA PERSONALIZZARE] Non è consentito fumare e non sono ammesse feste.',
+              title: 'Bagno',
+              text: 'Lasciare il bagno pulito dopo ogni utilizzo. Evitare sprechi d’acqua. Non gettare nel WC salviette, assorbenti o altri materiali non idonei.',
+            },
+            {
+              title: 'Sicurezza',
+              text: 'Spegnere le luci e gli apparecchi elettrici quando non necessari o prima di uscire. Chiudere porte e finestre quando si lascia l’abitazione. Avere cura delle chiavi di casa e non consegnarle a persone estranee.',
+            },
+            {
+              title: 'Divieto di fumo',
+              text: 'È vietato fumare all’interno dell’abitazione, comprese le camere e gli spazi comuni, mentre è possibile fumare all’esterno in terrazza.',
+            },
+            {
+              title: 'Cura dell’immobile',
+              text: 'Trattare con cura arredi, elettrodomestici e dotazioni della casa. Eventuali danni devono essere comunicati tempestivamente. È vietato spostare mobili senza autorizzazione. È obbligatorio rispettare le regole per la raccolta della spazzatura come da calendario. Qualsiasi problema relativo alla casa, come guasti, malfunzionamenti o situazioni particolari, deve essere comunicato tempestivamente al proprietario, così da poter intervenire nel più breve tempo possibile.',
             },
           ],
         },
@@ -360,11 +372,38 @@ export const content = {
           title: 'House rules',
           subtitle: 'The essentials',
           items: [
-            { title: 'Climate', text: '[DA PERSONALIZZARE] The air-conditioning control is by the entrance.' },
-            { title: 'Appliances', text: '[DA PERSONALIZZARE] Kitchen, oven, dishwasher and washing machine are available.' },
-            { title: 'Recycling', text: '[DA PERSONALIZZARE] Bins are under the sink; the schedule is on the fridge.' },
-            { title: 'Quiet hours', text: '[DA PERSONALIZZARE] Please keep noise down from 10:00 pm to 8:00 am.' },
-            { title: 'House rules', text: '[DA PERSONALIZZARE] No smoking and no parties.' },
+            {
+              title: 'Respect for others',
+              text: 'Always behave politely and respectfully. Avoid shouting, loud music and disturbing noise, especially in the evening and at night. Respect the privacy of other guests. Please also behave respectfully in the shared areas of the building, avoiding noise and conduct that may disturb the neighbours.',
+            },
+            {
+              title: 'Keeping your room clean',
+              text: 'Each guest must keep their room tidy and clean during their stay. Do not leave perishable food or rubbish in the room. Before leaving, check that you have not forgotten any personal belongings.',
+            },
+            {
+              title: 'Use of shared spaces',
+              text: 'Shared spaces are available to all guests. Please leave them clean and tidy after each use and put away any personal belongings when you have finished.',
+            },
+            {
+              title: 'Kitchen',
+              text: 'Wash, dry and put away dishes, pots and utensils immediately after use. Clean the worktop and any appliances used. Store food neatly and with consideration for other guests. Do not use food belonging to other guests.',
+            },
+            {
+              title: 'Bathroom',
+              text: 'Leave the bathroom clean after each use. Avoid wasting water. Do not flush wipes, sanitary products or other unsuitable materials down the toilet.',
+            },
+            {
+              title: 'Safety',
+              text: 'Turn off lights and electrical appliances when they are not needed or before going out. Close doors and windows when leaving the property. Take care of the house keys and do not give them to anyone else.',
+            },
+            {
+              title: 'No smoking',
+              text: 'Smoking is prohibited inside the property, including in the bedrooms and shared spaces. Smoking is permitted outside on the terrace.',
+            },
+            {
+              title: 'Care of the property',
+              text: 'Treat the furniture, appliances and household equipment with care. Report any damage promptly. Do not move furniture without permission. You must follow the waste collection rules shown on the schedule. Any problem involving the property, including faults, malfunctions or unusual situations, must be reported promptly to the owner so that it can be dealt with as quickly as possible.',
+            },
           ],
         },
         {

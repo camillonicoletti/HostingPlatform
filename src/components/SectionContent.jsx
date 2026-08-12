@@ -53,7 +53,7 @@ function Arrival({ section, guide }) {
 function Home({ section }) {
   return (
     <ul className="info-list">
-      {section.items.slice(0, 5).map((item, index) => (
+      {section.items.map((item, index) => (
         <li key={item.title}>
           <span className="info-list__number" aria-hidden="true">
             {String(index + 1).padStart(2, '0')}
