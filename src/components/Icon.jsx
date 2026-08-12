@@ -4,15 +4,18 @@ const glyphs = {
   rules: '⌂',
   food: '◇',
   transport: '⇄',
-  explore: '☼',
+  health: '✚',
   groceries: '▤',
   checkout: '✓',
   close: '×',
   arrow: '↗',
   whatsapp: '◌',
-  location: '⌖',
+  recycling: '♻',
   emergency: '!',
   copy: '⧉',
+  bus: '▰',
+  hospital: '+',
+  calendar: '□',
 };
 
 export default function Icon({ name, className = '' }) {

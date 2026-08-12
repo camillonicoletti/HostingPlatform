@@ -47,7 +47,7 @@ describe('guest guide navigation', () => {
       'rules',
       'food',
       'transport',
-      'pharmacies',
+      'health',
       'groceries',
       'checkout',
     ]);
@@ -57,9 +57,9 @@ describe('guest guide navigation', () => {
     'Check-in',
     'Wi-Fi',
     'Regole casa',
-    'Dove mangiare',
+    'Dove mangiare nei dintorni',
     'Trasporti vicini',
-    'Farmacie di emergenza',
+    'Farmacie e ospedali',
     'Supermercati',
     'Check-out',
   ])('opens and closes the %s sheet', async (label) => {
@@ -88,11 +88,16 @@ describe('guest guide navigation', () => {
     expect(await screen.findByRole('status')).toHaveTextContent(
       'Password copiata',
     );
+    expect(
+      screen.getByRole('button', { name: 'Accesso copiato' }),
+    ).toBeVisible();
+    expect(screen.getByTestId('wifi-password')).toHaveClass('is-scrambling');
+    expect(screen.getByTestId('wifi-password')).not.toHaveTextContent(
+      'Password Wi-Fi',
+    );
   });
 
   test.each([
-    'Trasporti vicini',
-    'Farmacie di emergenza',
     'Supermercati',
   ])(
     'shows configurable places in the %s sheet',
@@ -132,5 +137,107 @@ describe('guest guide navigation', () => {
     expect(mapLink).toHaveAttribute('href', expect.stringMatching(/^https:\/\//));
     expect(mapLink).toHaveAttribute('target', '_blank');
     expect(mapLink).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
+  });
+
+  test('places the house photo placeholder before the entry instructions', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Check-in/ }));
+
+    const photo = screen.getByText('Foto della casa in arrivo');
+    const instructions = screen.getByText('Come entrare');
+    expect(
+      photo.compareDocumentPosition(instructions) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+  });
+
+  test('shows exactly two bus lines with Moovit, Maps and the home stop', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Trasporti vicini/ }));
+
+    expect(screen.getAllByTestId('bus-line')).toHaveLength(2);
+    expect(screen.getAllByRole('link', { name: 'Apri in Moovit' })).toHaveLength(2);
+    expect(
+      screen.getAllByRole('link', { name: 'Apri in Google Maps' }),
+    ).toHaveLength(2);
+    expect(screen.getAllByRole('listitem', { current: 'location' })).toHaveLength(
+      2,
+    );
+  });
+
+  test('opens health on pharmacies, switches to hospitals and resets on reopen', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Farmacie e ospedali/ }));
+    expect(screen.getByRole('button', { name: 'Farmacie' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    expect(screen.getAllByTestId('pharmacy-card')).toHaveLength(3);
+
+    await user.click(screen.getByRole('button', { name: 'Ospedali' }));
+    expect(screen.getAllByTestId('hospital-card')).toHaveLength(2);
+    expect(
+      screen.getByRole('link', {
+        name: 'Trova pronto soccorso nel Lazio',
+      }),
+    ).toBeVisible();
+
+    await user.click(screen.getByRole('button', { name: 'Chiudi' }));
+    await user.click(screen.getByRole('button', { name: /Farmacie e ospedali/ }));
+    expect(screen.getByRole('button', { name: 'Farmacie' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
+
+  test('replaces Location with Recycling and shows all seven collection days', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    expect(screen.queryByRole('link', { name: 'Posizione' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Raccolta' }));
+
+    expect(screen.getAllByTestId('recycling-day')).toHaveLength(7);
+    expect(screen.getByText('Lunedì')).toBeVisible();
+    expect(screen.getByText('Domenica')).toBeVisible();
+    expect(screen.getAllByTestId('bin-icon')).toHaveLength(7);
+  });
+
+  test('offers six Google series and downloads one Apple calendar file', async () => {
+    const user = userEvent.setup();
+    const createObjectURL = vi.fn(() => 'blob:recycling-calendar');
+    const revokeObjectURL = vi.fn();
+    const anchorClick = vi
+      .spyOn(HTMLAnchorElement.prototype, 'click')
+      .mockImplementation(() => {});
+    Object.defineProperty(URL, 'createObjectURL', {
+      configurable: true,
+      value: createObjectURL,
+    });
+    Object.defineProperty(URL, 'revokeObjectURL', {
+      configurable: true,
+      value: revokeObjectURL,
+    });
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Raccolta' }));
+    await user.click(screen.getByRole('button', { name: 'Attiva promemoria' }));
+    await user.click(screen.getByRole('button', { name: 'Google Calendar' }));
+    const googleLinks = screen.getAllByRole('link', { name: /Aggiungi/ });
+    expect(googleLinks).toHaveLength(6);
+    googleLinks.forEach((link) => {
+      expect(new URL(link.href).hostname).toBe('calendar.google.com');
+    });
+
+    await user.click(screen.getByRole('button', { name: 'Apple / iPhone' }));
+    expect(createObjectURL).toHaveBeenCalledWith(expect.any(Blob));
+    expect(anchorClick).toHaveBeenCalledTimes(1);
+    expect(revokeObjectURL).toHaveBeenCalledWith('blob:recycling-calendar');
+    anchorClick.mockRestore();
   });
 });

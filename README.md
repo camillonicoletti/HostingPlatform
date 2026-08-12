@@ -8,11 +8,17 @@ Tutti i testi, indirizzi, contatti, orari, Wi-Fi, ristoranti, attrazioni e colle
 
 `src/content.js`
 
-Cerca `[DA PERSONALIZZARE]` e sostituisci ogni valore. Le sezioni `locale.it` e `locale.en` contengono rispettivamente italiano e inglese; mantieni gli stessi identificatori delle otto sezioni (`checkin`, `wifi`, `rules`, `food`, `transport`, `explore`, `groceries`, `checkout`).
+Cerca `[DA PERSONALIZZARE]` e sostituisci ogni valore. Le sezioni `locale.it` e `locale.en` contengono rispettivamente italiano e inglese; mantieni gli stessi identificatori delle otto sezioni (`checkin`, `wifi`, `rules`, `food`, `transport`, `health`, `groceries`, `checkout`).
 
-La home mobile mostra Check-in, Wi-Fi, Regole casa, Dove mangiare, Trasporti vicini, Cosa vedere, Supermercati e Check-out. Le informazioni di trasporti e supermercati si modificano negli array `items` delle rispettive sezioni.
+La home mobile mostra Check-in, Wi-Fi, Regole casa, Dove mangiare nei dintorni, Trasporti vicini, Farmacie e ospedali, Supermercati e Check-out.
 
-Il nome e la località sono in `content.brand`. Il numero WhatsApp, il telefono e l’email sono in `content.contacts`. I collegamenti alla posizione e alla recensione sono in `content.links`.
+- Per aggiungere la foto della casa, inserisci il percorso in `housePhoto` nella sezione Check-in di entrambe le lingue. Finché il valore è vuoto viene mostrato un placeholder.
+- Le due linee autobus si configurano nell'array `lines` della sezione `transport`: aggiorna linea, colore, fermata, direzione, frequenza, fermate principali e link Moovit/Maps.
+- La sezione `health` contiene esattamente tre slot `pharmacies` e due slot `hospitals`. Il link “Trova farmacie aperte” usa il servizio di Federfarma Roma indicato anche da Roma Capitale; il link ospedali usa la ricerca strutture del servizio sanitario regionale.
+- Il calendario `recycling.schedule` è soltanto dimostrativo. Sostituisci giorni e materiali con quelli reali prima di pubblicare.
+- Il promemoria Apple scarica un file `.ics` con tutte le raccolte; Google Calendar propone un link per ogni serie settimanale. Gli eventi durano quattro mesi e notificano la sera precedente.
+
+Il nome e la località sono in `content.brand`. Il numero WhatsApp, il telefono e l'email sono in `content.contacts`. I collegamenti alla posizione della casa e alla recensione sono in `content.links`.
 
 Non aggiungere al file codici della serratura, della cassaforte, PIN dell’allarme o altri segreti: il sito pubblicato è visibile a chiunque possieda il link.
 
@@ -77,4 +83,4 @@ npm test -- --run
 npm run build
 ```
 
-I test verificano lingue, apertura e chiusura delle schede, copia Wi-Fi, link Maps ed emergenze.
+I test verificano lingue, apertura e chiusura delle schede, copia Wi-Fi, foto Check-in, linee bus, switch Farmacie/Ospedali, raccolta, file calendario, link Maps ed emergenze.

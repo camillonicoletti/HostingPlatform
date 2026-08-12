@@ -1,4 +1,9 @@
 import Icon from './Icon';
+import CheckinPhoto from './CheckinPhoto';
+import HealthPanel from './HealthPanel';
+import RecyclingPanel from './RecyclingPanel';
+import TransportPanel from './TransportPanel';
+import WifiPanel from './WifiPanel';
 
 function ExternalLink({ href, children, className = 'action-link' }) {
   return (
@@ -29,6 +34,13 @@ function Arrival({ section, guide }) {
       <dl className="details-list">
         <Detail label={section.addressLabel}>{section.address}</Detail>
         <Detail label={section.checkInLabel}>{section.checkIn}</Detail>
+      </dl>
+      <CheckinPhoto
+        src={section.housePhoto}
+        alt={section.housePhotoAlt}
+        fallback={section.housePhotoFallback}
+      />
+      <dl className="details-list">
         <Detail label={section.instructionsLabel}>
           {section.instructions}
         </Detail>
@@ -36,26 +48,6 @@ function Arrival({ section, guide }) {
       </dl>
       <ExternalLink href={guide.links.propertyMap}>{guide.maps}</ExternalLink>
     </>
-  );
-}
-
-function Wifi({ section, guide, onCopy }) {
-  return (
-    <div className="wifi-card">
-      <dl className="details-list">
-        <Detail label={section.networkLabel}>
-          <span className="wifi-value">{guide.wifi.network}</span>
-        </Detail>
-        <Detail label={section.passwordLabel}>
-          <code className="wifi-password">{guide.wifi.password}</code>
-        </Detail>
-      </dl>
-      <button className="primary-button" type="button" onClick={onCopy}>
-        <Icon name="copy" />
-        {guide.copyPassword}
-      </button>
-      <p className="section-note">{section.note}</p>
-    </div>
   );
 }
 
@@ -148,31 +140,46 @@ function Emergency({ guide }) {
   );
 }
 
-export default function SectionContent({ section, guide, onCopy }) {
+export default function SectionContent({
+  section,
+  guide,
+  onCopy,
+  copyState,
+  onCalendarError,
+}) {
   switch (section.id) {
     case 'checkin':
       return <Arrival section={section} guide={guide} />;
     case 'wifi':
-      return <Wifi section={section} guide={guide} onCopy={onCopy} />;
+      return (
+        <WifiPanel
+          section={section}
+          guide={guide}
+          copyState={copyState}
+          onCopy={onCopy}
+        />
+      );
     case 'rules':
       return <Home section={section} />;
     case 'food':
       return <PlaceList items={section.places} guide={guide} type="food" />;
     case 'transport':
+      return <TransportPanel section={section} guide={guide} />;
     case 'groceries':
       return <PlaceList items={section.items} guide={guide} type="nearby" />;
-    case 'explore':
-      return (
-        <PlaceList
-          items={section.attractions}
-          guide={guide}
-          type="explore"
-        />
-      );
+    case 'health':
+      return <HealthPanel section={section} guide={guide} />;
     case 'checkout':
       return <Checkout section={section} guide={guide} />;
     case 'emergency':
       return <Emergency guide={guide} />;
+    case 'recycling':
+      return (
+        <RecyclingPanel
+          recycling={guide.recycling}
+          onCalendarError={onCalendarError}
+        />
+      );
     default:
       return null;
   }

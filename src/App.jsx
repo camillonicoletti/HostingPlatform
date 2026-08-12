@@ -22,6 +22,7 @@ export default function App() {
   const [language, setLanguage] = useState(readStoredLanguage);
   const [activeSectionId, setActiveSectionId] = useState(null);
   const [toast, setToast] = useState('');
+  const [copyState, setCopyState] = useState('idle');
   const returnFocusRef = useRef(null);
   const guide = getLocalizedContent(language);
   const activeSection = guide.sections.find(
@@ -34,11 +35,23 @@ export default function App() {
           title: guide.emergency.title,
           subtitle: guide.emergency.intro,
         }
+      : activeSectionId === 'recycling'
+        ? {
+            id: 'recycling',
+            title: guide.recycling.title,
+            subtitle: guide.recycling.intro,
+          }
       : activeSection;
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  useEffect(() => {
+    if (copyState !== 'copied') return undefined;
+    const timer = window.setTimeout(() => setCopyState('idle'), 1400);
+    return () => window.clearTimeout(timer);
+  }, [copyState]);
 
   const changeLanguage = (nextLanguage) => {
     setLanguage(nextLanguage);
@@ -58,6 +71,7 @@ export default function App() {
   const closePanel = useCallback(() => setActiveSectionId(null), []);
 
   const copyPassword = async () => {
+    setCopyState('copying');
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(guide.wifi.password);
@@ -73,8 +87,10 @@ export default function App() {
         input.remove();
         if (!copied) throw new Error('Copy command failed');
       }
+      setCopyState('copied');
       setToast(guide.passwordCopied);
     } catch {
+      setCopyState('error');
       setToast(guide.copyFailed);
     }
   };
@@ -102,8 +118,8 @@ export default function App() {
         labels={guide.quickActions}
         links={{
           whatsapp: guide.contacts.whatsappUrl,
-          location: guide.links.propertyMap,
         }}
+        onRecycling={(event) => openSection('recycling', event.currentTarget)}
         onEmergency={(event) => openSection('emergency', event.currentTarget)}
       />
 
@@ -119,6 +135,8 @@ export default function App() {
             section={activePanel}
             guide={guide}
             onCopy={copyPassword}
+            copyState={copyState}
+            onCalendarError={setToast}
           />
         </Sheet>
       ) : null}

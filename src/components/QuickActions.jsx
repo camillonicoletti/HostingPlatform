@@ -9,15 +9,22 @@ function QuickLink({ href, icon, children }) {
   );
 }
 
-export default function QuickActions({ labels, links, label, onEmergency }) {
+export default function QuickActions({
+  labels,
+  links,
+  label,
+  onEmergency,
+  onRecycling,
+}) {
   return (
     <nav className="quick-actions" aria-label={label}>
       <QuickLink href={links.whatsapp} icon="whatsapp">
         {labels.whatsapp}
       </QuickLink>
-      <QuickLink href={links.location} icon="location">
-        {labels.location}
-      </QuickLink>
+      <button type="button" onClick={onRecycling}>
+        <Icon name="recycling" />
+        <span>{labels.recycling}</span>
+      </button>
       <button type="button" onClick={onEmergency}>
         <Icon name="emergency" />
         <span>{labels.emergency}</span>
