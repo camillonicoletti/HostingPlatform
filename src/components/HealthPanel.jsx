@@ -11,6 +11,10 @@ function ExternalLink({ href, children, className = 'text-link' }) {
 }
 
 function HealthCard({ item, section, guide, type }) {
+  const phoneHref = item.phone
+    ? `tel:${item.phone.replace(/[^\d+]/g, '')}`
+    : null;
+
   return (
     <li
       className="health-card"
@@ -21,9 +25,10 @@ function HealthCard({ item, section, guide, type }) {
         <span className="distance">{item.distance}</span>
       </div>
       <p>{item.description}</p>
-      {item.phone ? (
+      {phoneHref ? (
         <p className="health-card__phone">
-          <strong>{section.phoneLabel}:</strong> {item.phone}
+          <strong>{section.phoneLabel}:</strong>{' '}
+          <a href={phoneHref}>{item.phone}</a>
         </p>
       ) : null}
       <ExternalLink href={item.map}>{guide.maps}</ExternalLink>

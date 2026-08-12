@@ -155,26 +155,7 @@ function Checkout({ section, guide }) {
 }
 
 function Emergency({ guide }) {
-  return (
-    <div className="emergency-panel">
-      <p>{guide.emergency.intro}</p>
-      <dl className="emergency-list">
-        <Detail label={guide.emergency.europeanLabel}>
-          <strong className="emergency-number">
-            {guide.emergency.europeanNumber}
-          </strong>
-        </Detail>
-        <Detail label={guide.emergency.hostLabel}>
-          {guide.contacts.phone}
-        </Detail>
-        <Detail label={guide.emergency.localLabel}>
-          {guide.contacts.localEmergencyName}
-          <br />
-          {guide.contacts.localEmergencyPhone}
-        </Detail>
-      </dl>
-    </div>
-  );
+  return <UsefulNumbersPanel items={guide.emergency.contacts} />;
 }
 
 export default function SectionContent({
@@ -201,7 +182,11 @@ export default function SectionContent({
     case 'food':
       return <UsefulNumbersPanel items={section.contacts} />;
     case 'transport':
-      return <TransportPanel section={section} guide={guide} />;
+      return (
+        <TransportPanel section={section} guide={guide}>
+          <UsefulNumbersPanel items={section.contacts} />
+        </TransportPanel>
+      );
     case 'groceries':
       return <PlaceList items={section.items} guide={guide} type="nearby" />;
     case 'health':

@@ -113,43 +113,30 @@ export const content = {
         },
         {
           id: 'food',
-          title: 'Numeri e App Utili',
-          subtitle: 'Contatti e servizi essenziali per il soggiorno',
+          title: 'Banche e Ufficio postale',
+          subtitle: 'Banca e ufficio postale in zona',
           contacts: [
             {
-              name: 'Guardia medica',
-              badge: '116117',
-              description: 'Servizio di continuità assistenziale.',
-              hours: [
-                'Notti feriali e festive: dalle 20:00 alle 08:00.',
-                'Sabato e giorni prefestivi: dalle 10:00 alle 20:00.',
-                'Domenica e giorni festivi: dalle 08:00 alle 20:00.',
-              ],
-              actions: [{ label: 'Chiama 116117', href: 'tel:116117' }],
-            },
-            {
-              name: 'Emergenze',
-              badge: '112',
-              description: 'Numero unico europeo per le emergenze.',
-              actions: [{ label: 'Chiama 112', href: 'tel:112' }],
-            },
-            {
-              name: 'Taxi',
-              badge: '06 3570',
-              description: 'Chiama il radiotaxi oppure prenota dall’app.',
+              name: 'BCC Roma – Agenzia Massimina',
+              badge: 'Banca',
+              description: 'Via della Massimilla, 14 - Roma',
               actions: [
-                { label: 'Chiama 06 3570', href: 'tel:063570' },
-                { label: 'Scarica App ITTAXI', href: 'https://www.ittaxi.it/' },
-              ],
-            },
-            {
-              name: 'App ATAC Roma',
-              badge: 'iOS · Android',
-              description: 'Consulta trasporti pubblici, orari e tempi di arrivo a Roma.',
-              actions: [
+                { label: 'Chiama 06 52866051', href: 'tel:0652866051' },
                 {
-                  label: 'Scarica App ATAC Roma',
-                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                  label: 'Apri in Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=BCC%20Roma%20Agenzia%20Massimina%20Via%20della%20Massimilla%2014%20Roma',
+                },
+              ],
+            },
+            {
+              name: 'Poste Italiane – Ufficio Postale Roma 140',
+              badge: 'Ufficio postale',
+              description: 'Via della Massimilla, 75 - Roma',
+              actions: [
+                { label: 'Chiama 06 6693562', href: 'tel:066693562' },
+                {
+                  label: 'Apri in Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=Poste%20Italiane%20Roma%20140%20Via%20della%20Massimilla%2075%20Roma',
                 },
               ],
             },
@@ -179,6 +166,28 @@ export const content = {
               map: 'https://www.google.com/maps/search/?api=1&query=fermata%20bus%20906%20Via%20Tullio%20Ascarelli%20Roma',
             },
           ],
+          contacts: [
+            {
+              name: 'Taxi e ITTAXI',
+              badge: '06 3570',
+              description: 'Chiama il radiotaxi oppure prenota dall’app ITTAXI.',
+              actions: [
+                { label: 'Chiama 06 3570', href: 'tel:063570' },
+                { label: 'Scarica App ITTAXI', href: 'https://www.ittaxi.it/' },
+              ],
+            },
+            {
+              name: 'App ATAC Roma',
+              badge: 'iOS · Android',
+              description: 'Consulta trasporti pubblici, fermate, orari e tempi di arrivo a Roma.',
+              actions: [
+                {
+                  label: 'Scarica App ATAC Roma',
+                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                },
+              ],
+            },
+          ],
         },
         {
           id: 'health',
@@ -194,41 +203,27 @@ export const content = {
           phoneLabel: 'Telefono',
           pharmacies: [
             {
-              name: '[DA PERSONALIZZARE] Farmacia 1',
-              description: '[DA PERSONALIZZARE] Indirizzo e indicazioni',
-              distance: '[DA PERSONALIZZARE] 3 min a piedi',
-              phone: '[DA PERSONALIZZARE] +39 06 0000001',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20farmacia%201',
-            },
-            {
-              name: '[DA PERSONALIZZARE] Farmacia 2',
-              description: '[DA PERSONALIZZARE] Indirizzo e indicazioni',
-              distance: '[DA PERSONALIZZARE] 7 min a piedi',
-              phone: '[DA PERSONALIZZARE] +39 06 0000002',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20farmacia%202',
-            },
-            {
-              name: '[DA PERSONALIZZARE] Farmacia 3',
-              description: '[DA PERSONALIZZARE] Indirizzo e indicazioni',
-              distance: '[DA PERSONALIZZARE] 10 min a piedi',
-              phone: '[DA PERSONALIZZARE] +39 06 0000003',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20farmacia%203',
+              name: 'Farmacia Buccella',
+              description: 'Via Aurelia, 1297 - Roma',
+              distance: 'Massimina–Casal Lumbroso',
+              phone: '+39 06 6618 0089',
+              map: 'https://www.google.com/maps/search/?api=1&query=Farmacia%20Buccella%20Via%20Aurelia%201297%20Roma',
             },
           ],
           hospitals: [
             {
-              name: '[DA PERSONALIZZARE] Ospedale 1',
-              description: '[DA PERSONALIZZARE] Pronto soccorso e servizi principali',
-              distance: '[DA PERSONALIZZARE] 4 km',
-              phone: '[DA PERSONALIZZARE] +39 06 0000011',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20ospedale%201',
+              name: 'Aurelia Hospital',
+              description: 'Via Aurelia, 860 - Roma · Pronto Soccorso DEA di 1° livello',
+              distance: 'Aurelia',
+              phone: '+39 06 6649 21',
+              map: 'https://www.google.com/maps/search/?api=1&query=Aurelia%20Hospital%20Via%20Aurelia%20860%20Roma',
             },
             {
-              name: '[DA PERSONALIZZARE] Ospedale 2',
-              description: '[DA PERSONALIZZARE] Presidio ospedaliero e guardia medica',
-              distance: '[DA PERSONALIZZARE] 7 km',
-              phone: '[DA PERSONALIZZARE] +39 06 0000012',
-              map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20ospedale%202',
+              name: 'Policlinico Universitario Agostino Gemelli IRCCS',
+              description: 'Largo Agostino Gemelli, 8 - Roma · Pronto Soccorso',
+              distance: 'Monte Mario',
+              phone: '+39 06 3015 1',
+              map: 'https://www.google.com/maps/search/?api=1&query=Policlinico%20Gemelli%20Largo%20Agostino%20Gemelli%208%20Roma',
             },
           ],
         },
@@ -288,11 +283,26 @@ export const content = {
       ],
       emergency: {
         title: 'Emergenze',
-        intro: 'Questi numeri sono mostrati solo come riferimento. Tocca Chiudi per tornare alla guida.',
-        europeanLabel: 'Numero unico europeo',
-        europeanNumber: '112',
-        hostLabel: 'Telefono host',
-        localLabel: 'Contatto locale',
+        intro: 'Chiama il 112 per le emergenze e il 116117 per l’assistenza medica non urgente fuori orario.',
+        contacts: [
+          {
+            name: 'Emergenze',
+            badge: '112',
+            description: 'Numero unico europeo per le emergenze.',
+            actions: [{ label: 'Chiama 112', href: 'tel:112' }],
+          },
+          {
+            name: 'Guardia medica',
+            badge: '116117',
+            description: 'Servizio di continuità assistenziale.',
+            hours: [
+              'Notti feriali e festive: dalle 20:00 alle 08:00.',
+              'Sabato e giorni prefestivi: dalle 10:00 alle 20:00.',
+              'Domenica e giorni festivi: dalle 08:00 alle 20:00.',
+            ],
+            actions: [{ label: 'Chiama 116117', href: 'tel:116117' }],
+          },
+        ],
       },
       recycling: {
         title: 'Raccolta differenziata',
@@ -405,43 +415,30 @@ export const content = {
         },
         {
           id: 'food',
-          title: 'Useful Numbers and Apps',
-          subtitle: 'Essential contacts and services for your stay',
+          title: 'Banks and Post Office',
+          subtitle: 'Nearby bank and post office',
           contacts: [
             {
-              name: 'Out-of-hours medical service',
-              badge: '116117',
-              description: 'Medical care service outside regular hours.',
-              hours: [
-                'Weeknights and public holidays: from 8:00 pm to 8:00 am.',
-                'Saturdays and days before public holidays: from 10:00 am to 8:00 pm.',
-                'Sundays and public holidays: from 8:00 am to 8:00 pm.',
-              ],
-              actions: [{ label: 'Call 116117', href: 'tel:116117' }],
-            },
-            {
-              name: 'Emergencies',
-              badge: '112',
-              description: 'European single emergency number.',
-              actions: [{ label: 'Call 112', href: 'tel:112' }],
-            },
-            {
-              name: 'Taxi',
-              badge: '06 3570',
-              description: 'Call the radio taxi or book through the app.',
+              name: 'BCC Roma – Agenzia Massimina',
+              badge: 'Bank',
+              description: 'Via della Massimilla, 14 - Roma',
               actions: [
-                { label: 'Call 06 3570', href: 'tel:063570' },
-                { label: 'Download ITTAXI App', href: 'https://www.ittaxi.it/' },
-              ],
-            },
-            {
-              name: 'ATAC Roma App',
-              badge: 'iOS · Android',
-              description: 'Check public transport, schedules and arrival times in Rome.',
-              actions: [
+                { label: 'Call 06 52866051', href: 'tel:0652866051' },
                 {
-                  label: 'Download ATAC Roma App',
-                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                  label: 'Open in Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=BCC%20Roma%20Agenzia%20Massimina%20Via%20della%20Massimilla%2014%20Roma',
+                },
+              ],
+            },
+            {
+              name: 'Poste Italiane – Ufficio Postale Roma 140',
+              badge: 'Post office',
+              description: 'Via della Massimilla, 75 - Roma',
+              actions: [
+                { label: 'Call 06 6693562', href: 'tel:066693562' },
+                {
+                  label: 'Open in Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=Poste%20Italiane%20Roma%20140%20Via%20della%20Massimilla%2075%20Roma',
                 },
               ],
             },
@@ -471,6 +468,28 @@ export const content = {
               map: 'https://www.google.com/maps/search/?api=1&query=bus%20906%20stop%20Via%20Tullio%20Ascarelli%20Rome',
             },
           ],
+          contacts: [
+            {
+              name: 'Taxi and ITTAXI',
+              badge: '06 3570',
+              description: 'Call the radio taxi or book through the ITTAXI app.',
+              actions: [
+                { label: 'Call 06 3570', href: 'tel:063570' },
+                { label: 'Download ITTAXI App', href: 'https://www.ittaxi.it/' },
+              ],
+            },
+            {
+              name: 'ATAC Roma App',
+              badge: 'iOS · Android',
+              description: 'Check public transport, stops, schedules and arrival times in Rome.',
+              actions: [
+                {
+                  label: 'Download ATAC Roma App',
+                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                },
+              ],
+            },
+          ],
         },
         {
           id: 'health',
@@ -485,13 +504,29 @@ export const content = {
             'Call 112 in an emergency: do not choose a hospital based only on distance.',
           phoneLabel: 'Phone',
           pharmacies: [
-            { name: '[DA PERSONALIZZARE] Pharmacy 1', description: '[DA PERSONALIZZARE] Address and directions', distance: '[DA PERSONALIZZARE] 3 min walk', phone: '[DA PERSONALIZZARE] +39 06 0000001', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20pharmacy%201' },
-            { name: '[DA PERSONALIZZARE] Pharmacy 2', description: '[DA PERSONALIZZARE] Address and directions', distance: '[DA PERSONALIZZARE] 7 min walk', phone: '[DA PERSONALIZZARE] +39 06 0000002', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20pharmacy%202' },
-            { name: '[DA PERSONALIZZARE] Pharmacy 3', description: '[DA PERSONALIZZARE] Address and directions', distance: '[DA PERSONALIZZARE] 10 min walk', phone: '[DA PERSONALIZZARE] +39 06 0000003', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20pharmacy%203' },
+            {
+              name: 'Farmacia Buccella',
+              description: 'Via Aurelia, 1297 - Roma',
+              distance: 'Massimina–Casal Lumbroso',
+              phone: '+39 06 6618 0089',
+              map: 'https://www.google.com/maps/search/?api=1&query=Farmacia%20Buccella%20Via%20Aurelia%201297%20Roma',
+            },
           ],
           hospitals: [
-            { name: '[DA PERSONALIZZARE] Hospital 1', description: '[DA PERSONALIZZARE] Emergency room and main services', distance: '[DA PERSONALIZZARE] 4 km', phone: '[DA PERSONALIZZARE] +39 06 0000011', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20hospital%201' },
-            { name: '[DA PERSONALIZZARE] Hospital 2', description: '[DA PERSONALIZZARE] Hospital and out-of-hours medical service', distance: '[DA PERSONALIZZARE] 7 km', phone: '[DA PERSONALIZZARE] +39 06 0000012', map: 'https://www.google.com/maps/search/?api=1&query=%5BDA%20PERSONALIZZARE%5D%20hospital%202' },
+            {
+              name: 'Aurelia Hospital',
+              description: 'Via Aurelia, 860 - Roma · Emergency Department, Level 1 DEA',
+              distance: 'Aurelia',
+              phone: '+39 06 6649 21',
+              map: 'https://www.google.com/maps/search/?api=1&query=Aurelia%20Hospital%20Via%20Aurelia%20860%20Roma',
+            },
+            {
+              name: 'Policlinico Universitario Agostino Gemelli IRCCS',
+              description: 'Largo Agostino Gemelli, 8 - Roma · Emergency Department',
+              distance: 'Monte Mario',
+              phone: '+39 06 3015 1',
+              map: 'https://www.google.com/maps/search/?api=1&query=Policlinico%20Gemelli%20Largo%20Agostino%20Gemelli%208%20Roma',
+            },
           ],
         },
         {
@@ -525,11 +560,26 @@ export const content = {
       ],
       emergency: {
         title: 'Emergencies',
-        intro: 'These numbers are shown for reference only. Tap Close to return to the guide.',
-        europeanLabel: 'European emergency number',
-        europeanNumber: '112',
-        hostLabel: 'Host phone',
-        localLabel: 'Local contact',
+        intro: 'Call 112 for emergencies and 116117 for non-urgent medical care outside regular hours.',
+        contacts: [
+          {
+            name: 'Emergencies',
+            badge: '112',
+            description: 'European single emergency number.',
+            actions: [{ label: 'Call 112', href: 'tel:112' }],
+          },
+          {
+            name: 'Out-of-hours medical service',
+            badge: '116117',
+            description: 'Medical care service outside regular hours.',
+            hours: [
+              'Weeknights and public holidays: from 8:00 pm to 8:00 am.',
+              'Saturdays and days before public holidays: from 10:00 am to 8:00 pm.',
+              'Sundays and public holidays: from 8:00 am to 8:00 pm.',
+            ],
+            actions: [{ label: 'Call 116117', href: 'tel:116117' }],
+          },
+        ],
       },
       recycling: {
         title: 'Recycling collection',
