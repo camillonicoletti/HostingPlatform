@@ -33,7 +33,7 @@ export default function RecyclingPanel({ recycling, onCalendarError }) {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'casa-baiocco-raccolta.ics';
+      link.download = 'la-mia-casa-raccolta.ics';
       document.body.append(link);
       link.click();
       link.remove();

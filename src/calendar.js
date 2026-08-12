@@ -73,7 +73,7 @@ export function buildIcsCalendar(schedule, labels, now = new Date()) {
 
       return [
         'BEGIN:VEVENT',
-        `UID:${uidDate}-${item.weekday}@casa-baiocco`,
+        `UID:${uidDate}-${item.weekday}@la-mia-casa`,
         `DTSTAMP:${toUtcCalendarDate(now)}`,
         `DTSTART:${toLocalCalendarDate(start)}`,
         `DTEND:${toLocalCalendarDate(end)}`,
@@ -92,7 +92,7 @@ export function buildIcsCalendar(schedule, labels, now = new Date()) {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Casa Baiocco//Guest Guide//IT',
+    'PRODID:-//La mia Casa//Guest Guide//IT',
     'CALSCALE:GREGORIAN',
     ...events,
     'END:VCALENDAR',

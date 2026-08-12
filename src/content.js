@@ -1,6 +1,6 @@
 export const content = {
   brand: {
-    name: 'CASA BAIOCCO',
+    name: 'La mia Casa',
     location: '[DA PERSONALIZZARE] Roma, Italia',
   },
   contacts: {
@@ -54,11 +54,11 @@ export const content = {
           title: 'Check-in',
           subtitle: 'Arrivo e accesso',
           addressLabel: 'Indirizzo',
-          address: '[DA PERSONALIZZARE] Via dell’Ospitalità 10, Roma',
+          address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
           checkIn: '[DA PERSONALIZZARE] dalle 15:00 alle 20:00',
           housePhoto: '',
-          housePhotoAlt: '[DA PERSONALIZZARE] Facciata di Casa Baiocco',
+          housePhotoAlt: '[DA PERSONALIZZARE] Facciata di La mia Casa',
           housePhotoFallback: 'Foto della casa in arrivo',
           instructionsLabel: 'Come entrare',
           instructions:
@@ -300,7 +300,7 @@ export const content = {
         addToGoogle: 'Aggiungi',
         noCollection: 'Nessun ritiro',
         calendarTitlePrefix: 'Raccolta',
-        calendarDescription: 'Promemoria raccolta differenziata di Casa Baiocco.',
+        calendarDescription: 'Promemoria raccolta differenziata di La mia Casa.',
         calendarError: 'Calendario non disponibile: usa Google Calendar.',
         schedule: [
           { weekday: 1, day: 'Lunedì', material: 'Organico', kind: 'organic', collects: true },
@@ -340,11 +340,11 @@ export const content = {
           title: 'Check-in',
           subtitle: 'Arrival and access',
           addressLabel: 'Address',
-          address: '[DA PERSONALIZZARE] 10 Hospitality Street, Rome',
+          address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
           checkIn: '[DA PERSONALIZZARE] from 3:00 pm to 8:00 pm',
           housePhoto: '',
-          housePhotoAlt: '[DA PERSONALIZZARE] Casa Baiocco exterior',
+          housePhotoAlt: '[DA PERSONALIZZARE] La mia Casa exterior',
           housePhotoFallback: 'House photo coming soon',
           instructionsLabel: 'How to enter',
           instructions:
@@ -495,7 +495,7 @@ export const content = {
         addToGoogle: 'Add',
         noCollection: 'No collection',
         calendarTitlePrefix: 'Collection',
-        calendarDescription: 'Casa Baiocco recycling collection reminder.',
+        calendarDescription: 'La mia Casa recycling collection reminder.',
         calendarError: 'Calendar unavailable: use Google Calendar.',
         schedule: [
           { weekday: 1, day: 'Monday', material: 'Food waste', kind: 'organic', collects: true },
