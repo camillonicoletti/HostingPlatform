@@ -1,7 +1,7 @@
 export const content = {
   brand: {
     name: 'LA MIA CASA',
-    location: '[DA PERSONALIZZARE] Roma, Italia',
+    location: 'Via Tullio Ascarelli, 99 - Roma',
   },
   contacts: {
     whatsappDisplay: '+39 347 700 5683',
@@ -14,7 +14,7 @@ export const content = {
   links: {
     propertyMap:
       'https://www.google.com/maps/search/?api=1&query=Via%20Tullio%20Ascarelli%2C%2099%20-%20Roma',
-    review: '',
+    review: 'https://housinganywhere.com/it/room/ut1483360/it/Rome/via-tullio-ascarelli',
   },
   healthLinks: {
     openPharmacies:
@@ -73,7 +73,7 @@ export const content = {
         },
         {
           id: 'rules',
-          title: 'Regole casa',
+          title: 'Regole della casa',
           subtitle: 'Le cose essenziali',
           items: [
             {
@@ -287,8 +287,8 @@ export const content = {
           contactHost: 'Contatta l’host',
           review: 'Lascia una recensione',
           reviewPrompt:
-            'Se hai prenotato tramite HOUSE clicca qui per lasciare una recensione.',
-          reviewHouse: 'Lascia recensione su HOUSE',
+            'Se hai prenotato tramite Housing Anywhere clicca qui per lasciare una recensione.',
+          reviewHouse: 'Lascia recensione su Housing Anywhere',
           closeReview: 'Chiudi recensione',
         },
       ],
@@ -319,7 +319,7 @@ export const content = {
         title: 'Raccolta differenziata',
         intro: 'Calendario settimanale dei ritiri sotto casa.',
         demoNote:
-          'Chiudi accuratamente i sacchetti e depositali la sera precedente fuori dal portoncino sulla strada. Il vetro non viene raccolto porta a porta: uscendo dal portone gira a destra e usa l’apposito contenitore comunale poco più avanti.',
+          'Chiudi accuratamente i sacchetti e depositali la sera precedente fuori dal portoncino sulla strada. IL VETRO non viene raccolto porta a porta: uscendo dal portone gira a destra e usa l’apposito contenitore comunale poco più avanti.',
         reminder: 'Attiva promemoria',
         closeReminder: 'Chiudi promemoria',
         reminderIntro: 'Scegli il calendario che usi sul telefono.',
@@ -577,8 +577,8 @@ export const content = {
           contactHost: 'Contact the host',
           review: 'Leave a review',
           reviewPrompt:
-            'If you booked through HOUSE, click here to leave a review.',
-          reviewHouse: 'Leave a review on HOUSE',
+            'If you booked through Housing Anywhere, click here to leave a review.',
+          reviewHouse: 'Leave a review on Housing Anywhere',
           closeReview: 'Close review',
         },
       ],
@@ -609,7 +609,7 @@ export const content = {
         title: 'Recycling collection',
         intro: 'Weekly collection schedule outside the house.',
         demoNote:
-          'Close the bags carefully and put them outside the street entrance on the evening before collection. Glass is not collected door to door: turn right when leaving the entrance and use the municipal glass container a little further along the road.',
+          'Close the bags carefully and put them outside the street entrance on the evening before collection. GLASS is not collected door to door: turn right when leaving the entrance and use the municipal glass container a little further along the road.',
         reminder: 'Enable reminders',
         closeReminder: 'Close reminders',
         reminderIntro: 'Choose the calendar you use on your phone.',

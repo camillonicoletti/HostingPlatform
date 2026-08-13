@@ -28,7 +28,10 @@ export default function Header({
           EN
         </button>
       </div>
-      <h1>{brand.name}</h1>
+      <div className="hero__brand">
+        <h1>{brand.name}</h1>
+        <address>{brand.location}</address>
+      </div>
     </header>
   );
 }

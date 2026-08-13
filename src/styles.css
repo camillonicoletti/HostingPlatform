@@ -148,6 +148,19 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.hero__brand {
+  min-width: 0;
+}
+
+.hero__brand address {
+  margin-top: 2px;
+  color: var(--night-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+
 .guide-main {
   min-height: 0;
 }
@@ -1026,6 +1039,7 @@ a:focus-visible {
 .glass-warning {
   color: #c52f2f;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .reminder-panel {
