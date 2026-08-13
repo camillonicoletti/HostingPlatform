@@ -337,7 +337,7 @@ describe('guest guide navigation', () => {
     ).toBeTruthy();
     expect(reminder).toHaveAttribute('aria-expanded', 'false');
     expect(reminder.querySelector('[data-icon="calendar"]')).toBeTruthy();
-    expect(screen.getByText('vetro', { exact: false })).toHaveClass(
+    expect(screen.getByText(/^vetro$/i)).toHaveClass(
       'glass-warning',
     );
 
