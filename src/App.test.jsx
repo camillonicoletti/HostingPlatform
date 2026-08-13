@@ -167,8 +167,14 @@ describe('guest guide navigation', () => {
       name: 'Ingresso della casa al civico 99',
     });
     const instructions = screen.getByText('Come entrare');
+    const arrivalPanel = photo.closest('.arrival-panel');
 
     expect(photo).toHaveAttribute('src', '/img_casa.jpg');
+    expect(arrivalPanel).toBeInTheDocument();
+    expect(arrivalPanel).toContainElement(instructions);
+    expect(arrivalPanel).toContainElement(
+      screen.getByRole('link', { name: 'Apri in Google Maps' }),
+    );
     expect(
       photo.compareDocumentPosition(instructions) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();

@@ -31,7 +31,7 @@ function Detail({ label, children }) {
 
 function Arrival({ section, guide }) {
   return (
-    <>
+    <div className="arrival-panel">
       <dl className="details-list">
         <Detail label={section.addressLabel}>{section.address}</Detail>
         <Detail label={section.checkInLabel}>{section.checkIn}</Detail>
@@ -47,7 +47,7 @@ function Arrival({ section, guide }) {
         </Detail>
       </dl>
       <ExternalLink href={guide.links.propertyMap}>{guide.maps}</ExternalLink>
-    </>
+    </div>
   );
 }
 

@@ -523,6 +523,28 @@ a:focus-visible {
   object-position: 50% 100%;
 }
 
+.arrival-panel .detail {
+  padding: 10px 0;
+  gap: 4px;
+}
+
+.arrival-panel .detail:first-child {
+  padding-top: 0;
+}
+
+.arrival-panel .detail dd {
+  font-size: 0.86rem;
+  line-height: 1.38;
+}
+
+.arrival-panel .checkin-photo {
+  margin: 10px 0;
+}
+
+.arrival-panel > .action-link {
+  margin-top: 10px;
+}
+
 .checkin-photo__fallback {
   display: grid;
   height: 100%;
