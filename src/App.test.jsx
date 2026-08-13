@@ -263,19 +263,38 @@ describe('guest guide navigation', () => {
     );
   });
 
-  test('opens an inline HOUSE review panel with a disabled placeholder button', async () => {
+  test('opens and closes the inline HOUSE review panel', async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: /Check-out/ }));
-    await user.click(
-      screen.getByRole('button', { name: 'Lascia una recensione' }),
-    );
+    const reviewButton = screen.getByRole('button', {
+      name: 'Lascia una recensione',
+    });
 
+    expect(reviewButton).toHaveAttribute('aria-expanded', 'false');
+    await user.click(reviewButton);
+
+    expect(reviewButton).toHaveAttribute('aria-expanded', 'true');
+    expect(reviewButton).toHaveAttribute(
+      'aria-controls',
+      'checkout-review-panel',
+    );
     expect(screen.getByText(/prenotato tramite HOUSE/)).toBeVisible();
     expect(
       screen.getByRole('button', { name: 'Lascia recensione su HOUSE' }),
     ).toBeDisabled();
+
+    const closeReview = screen.getByRole('button', {
+      name: 'Chiudi recensione',
+    });
+    expect(closeReview).toHaveTextContent('×');
+    await user.click(closeReview);
+
+    expect(reviewButton).toHaveAttribute('aria-expanded', 'false');
+    expect(
+      screen.queryByText(/prenotato tramite HOUSE/),
+    ).not.toBeInTheDocument();
   });
 
   test('replaces Location with Recycling and shows all seven collection days', async () => {

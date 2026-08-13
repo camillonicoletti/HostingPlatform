@@ -59,6 +59,12 @@ describe('guest guide content', () => {
     expect(en.sections.find(({ id }) => id === 'checkout').reviewHouse).toBe(
       'Leave a review on HOUSE',
     );
+    expect(it.sections.find(({ id }) => id === 'checkout').closeReview).toBe(
+      'Chiudi recensione',
+    );
+    expect(en.sections.find(({ id }) => id === 'checkout').closeReview).toBe(
+      'Close review',
+    );
     const atacActions = it.sections
       .find(({ id }) => id === 'transport')
       .contacts.find(({ name }) => name === 'App ATAC Roma').actions;

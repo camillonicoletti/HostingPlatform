@@ -1161,6 +1161,7 @@ a:focus-visible {
 }
 
 .review-panel {
+  position: relative;
   margin-top: 12px;
   padding: 15px;
   border: 1px solid rgba(101, 112, 74, 0.18);
@@ -1170,10 +1171,31 @@ a:focus-visible {
 
 .review-panel p {
   margin: 0;
+  padding-inline: 34px;
   color: var(--night-soft);
   font-size: 0.8rem;
   line-height: 1.5;
   text-align: center;
+}
+
+.review-panel__close {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(23, 39, 55, 0.14);
+  border-radius: 50%;
+  place-items: center;
+  color: var(--night);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.review-panel__close:focus-visible {
+  outline: 3px solid rgba(169, 78, 52, 0.34);
+  outline-offset: 2px;
 }
 
 .review-panel .action-link {

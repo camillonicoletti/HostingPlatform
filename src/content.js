@@ -284,6 +284,7 @@ export const content = {
           reviewPrompt:
             'Se hai prenotato tramite HOUSE clicca qui per lasciare una recensione.',
           reviewHouse: 'Lascia recensione su HOUSE',
+          closeReview: 'Chiudi recensione',
         },
       ],
       emergency: {
@@ -568,6 +569,7 @@ export const content = {
           reviewPrompt:
             'If you booked through HOUSE, click here to leave a review.',
           reviewHouse: 'Leave a review on HOUSE',
+          closeReview: 'Close review',
         },
       ],
       emergency: {

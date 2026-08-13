@@ -194,13 +194,22 @@ function Checkout({ section, guide }) {
           className="action-link secondary"
           type="button"
           aria-expanded={showReview}
+          aria-controls="checkout-review-panel"
           onClick={() => setShowReview(true)}
         >
           {section.review}
         </button>
       </div>
       {showReview ? (
-        <div className="review-panel">
+        <div className="review-panel" id="checkout-review-panel">
+          <button
+            className="review-panel__close"
+            type="button"
+            aria-label={section.closeReview}
+            onClick={() => setShowReview(false)}
+          >
+            <Icon name="close" />
+          </button>
           <p>{section.reviewPrompt}</p>
           {guide.links.review ? (
             <ExternalLink href={guide.links.review} className="action-link">
