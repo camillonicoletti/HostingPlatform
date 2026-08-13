@@ -17,6 +17,20 @@ function BinIcon({ kind }) {
   );
 }
 
+function RecyclingNotice({ text }) {
+  const match = text.match(/^(.*?)(vetro|glass)(.*)$/i);
+
+  if (!match) return text;
+
+  return (
+    <>
+      {match[1]}
+      <strong className="glass-warning">{match[2]}</strong>
+      {match[3]}
+    </>
+  );
+}
+
 export default function RecyclingPanel({ recycling, onCalendarError }) {
   const [showChoices, setShowChoices] = useState(false);
   const [showGoogle, setShowGoogle] = useState(false);
@@ -45,20 +59,8 @@ export default function RecyclingPanel({ recycling, onCalendarError }) {
 
   return (
     <div className="recycling-panel">
-      <ul className="recycling-list">
-        {recycling.schedule.map((item) => (
-          <li className="recycling-row" data-testid="recycling-day" key={item.day}>
-            <div>
-              <strong>{item.day}</strong>
-              <span>{item.material}</span>
-            </div>
-            <BinIcon kind={item.kind} />
-          </li>
-        ))}
-      </ul>
-      <p className="recycling-demo-note">{recycling.demoNote}</p>
       <button
-        className="primary-button"
+        className="primary-button recycling-reminder"
         type="button"
         onClick={() => setShowChoices(true)}
       >
@@ -94,6 +96,20 @@ export default function RecyclingPanel({ recycling, onCalendarError }) {
           ) : null}
         </div>
       ) : null}
+      <ul className="recycling-list">
+        {recycling.schedule.map((item) => (
+          <li className="recycling-row" data-testid="recycling-day" key={item.day}>
+            <div>
+              <strong>{item.day}</strong>
+              <span>{item.material}</span>
+            </div>
+            <BinIcon kind={item.kind} />
+          </li>
+        ))}
+      </ul>
+      <p className="recycling-demo-note">
+        <RecyclingNotice text={recycling.demoNote} />
+      </p>
     </div>
   );
 }

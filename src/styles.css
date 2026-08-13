@@ -229,22 +229,12 @@ a:focus-visible {
   min-width: 0;
   padding-right: 18px;
   flex-direction: column;
-  gap: 3px;
 }
 
 .guide-card__copy strong {
   font-size: 0.9rem;
   letter-spacing: -0.018em;
   line-height: 1.15;
-}
-
-.guide-card__copy small {
-  overflow: hidden;
-  color: var(--night-soft);
-  font-size: 0.66rem;
-  line-height: 1.25;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .guide-card__arrow {
@@ -733,6 +723,80 @@ a:focus-visible {
   font-size: 0.7rem;
 }
 
+.transport-panel .bus-lines {
+  gap: 8px;
+}
+
+.transport-panel .bus-line {
+  padding: 12px;
+}
+
+.transport-panel .bus-line__badge {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.transport-panel .bus-line__details {
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.transport-panel .bus-line__details div {
+  grid-template-columns: minmax(84px, 0.62fr) 1.38fr;
+  gap: 8px;
+}
+
+.transport-panel .route-strip {
+  margin: 13px 0 5px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.transport-panel .route-strip li {
+  gap: 4px;
+}
+
+.transport-panel .route-stop__dot {
+  width: 15px;
+  height: 15px;
+  border-width: 3px;
+}
+
+.transport-panel .route-strip::before {
+  top: 6px;
+}
+
+.transport-panel .bus-line__actions {
+  gap: 8px;
+}
+
+.transport-extras {
+  margin-top: 8px;
+}
+
+.transport-extras .place-list {
+  gap: 8px;
+}
+
+.transport-extras .place-card {
+  padding: 12px;
+}
+
+.transport-extras .place-card p {
+  margin-top: 3px;
+  line-height: 1.35;
+}
+
+.transport-extras .useful-actions {
+  margin-top: 3px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+}
+
+.transport-extras .useful-actions .text-link {
+  min-height: 40px;
+  padding: 7px 0;
+}
+
 .segmented-control {
   position: sticky;
   top: -20px;
@@ -805,24 +869,24 @@ a:focus-visible {
   display: grid;
   margin: 0;
   padding: 0;
-  gap: 9px;
+  gap: 6px;
   list-style: none;
 }
 
 .recycling-row {
   display: grid;
-  min-height: 66px;
-  padding: 10px 12px 10px 15px;
+  min-height: 52px;
+  padding: 6px 10px 6px 13px;
   border: 1px solid rgba(23, 39, 55, 0.08);
   border-radius: var(--radius-small);
-  grid-template-columns: 1fr 46px;
+  grid-template-columns: 1fr 38px;
   align-items: center;
   background: var(--white);
 }
 
 .recycling-row > div {
   display: grid;
-  gap: 4px;
+  gap: 2px;
 }
 
 .recycling-row strong {
@@ -835,8 +899,8 @@ a:focus-visible {
 }
 
 .bin-icon {
-  width: 34px;
-  height: 42px;
+  width: 27px;
+  height: 34px;
   justify-self: end;
   filter: drop-shadow(0 4px 5px rgba(23, 39, 55, 0.13));
 }
@@ -847,6 +911,20 @@ a:focus-visible {
 .bin-icon--glass { color: #3d8a5b; }
 .bin-icon--general { color: #65717b; }
 .bin-icon--none { color: #bbb4aa; opacity: 0.45; }
+
+.recycling-reminder {
+  margin: 0 0 10px;
+}
+
+.recycling-reminder .icon {
+  display: inline-flex;
+  font-size: 1.1rem;
+}
+
+.glass-warning {
+  color: #c52f2f;
+  font-weight: 900;
+}
 
 .reminder-panel {
   margin-top: 12px;
@@ -1002,6 +1080,35 @@ a:focus-visible {
   margin-top: 0;
 }
 
+.review-panel {
+  margin-top: 12px;
+  padding: 15px;
+  border: 1px solid rgba(101, 112, 74, 0.18);
+  border-radius: var(--radius-medium);
+  background: var(--olive-soft);
+}
+
+.review-panel p {
+  margin: 0;
+  color: var(--night-soft);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.review-panel .action-link {
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.review-panel .action-link:disabled {
+  color: rgba(255, 255, 255, 0.82);
+  background: #958f87;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
 .emergency-panel > p {
   margin: 0 0 18px;
   color: var(--night-soft);
@@ -1067,9 +1174,12 @@ a:focus-visible {
 }
 
 @media (max-width: 360px) {
-  .bus-line__actions,
   .reminder-actions {
     grid-template-columns: 1fr;
+  }
+
+  .transport-panel .bus-line__actions .text-link {
+    font-size: 0.64rem;
   }
 }
 
@@ -1134,10 +1244,6 @@ a:focus-visible {
 
   .guide-card__copy strong {
     font-size: 0.84rem;
-  }
-
-  .guide-card__copy small {
-    display: none;
   }
 
   .guide-card__arrow {

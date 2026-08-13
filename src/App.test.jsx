@@ -45,22 +45,39 @@ describe('guest guide navigation', () => {
       'checkin',
       'wifi',
       'rules',
-      'food',
+      'groceries',
       'transport',
       'health',
-      'groceries',
+      'food',
       'checkout',
     ]);
+  });
+
+  test('hides card subtitles while keeping accessible descriptions and semantic icons', () => {
+    render(<App />);
+
+    expect(document.querySelectorAll('.guide-card__copy small')).toHaveLength(0);
+    expect(
+      screen.getByRole('button', { name: /Check-in\. Arrivo e accesso/ }),
+    ).toBeVisible();
+
+    ['checkin', 'wifi', 'groceries', 'transport', 'food'].forEach((id) => {
+      expect(
+        document.querySelector(
+          `[data-section-id="${id}"] [data-icon="${id}"]`,
+        ),
+      ).toBeTruthy();
+    });
   });
 
   test.each([
     'Check-in',
     'Wi-Fi',
     'Regole casa',
-    'Dove mangiare nei dintorni',
-    'Trasporti vicini',
-    'Farmacie e ospedali',
     'Supermercati',
+    'Trasporti',
+    'Farmacie e ospedali',
+    'Banche e Ufficio postale',
     'Check-out',
   ])('opens and closes the %s sheet', async (label) => {
     const user = userEvent.setup();
@@ -113,16 +130,17 @@ describe('guest guide navigation', () => {
     },
   );
 
-  test('shows emergency numbers without starting a call', async () => {
+  test('shows emergency numbers with direct call actions', async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: 'Emergenze' }));
 
     expect(screen.getByRole('dialog')).toHaveTextContent('112');
-    expect(
-      screen.queryByRole('link', { name: /112/ }),
-    ).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Chiama 112' })).toHaveAttribute(
+      'href',
+      'tel:112',
+    );
   });
 
   test('offers a protected Google Maps link from the check-in sheet', async () => {
@@ -152,20 +170,28 @@ describe('guest guide navigation', () => {
     ).toBeTruthy();
   });
 
-  test('shows exactly two bus lines with Moovit, Maps and the home stop', async () => {
+  test('shows the configured bus line in a compact transport panel', async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await user.click(screen.getByRole('button', { name: /Trasporti vicini/ }));
+    await user.click(screen.getByRole('button', { name: /Trasporti/ }));
 
-    expect(screen.getAllByTestId('bus-line')).toHaveLength(2);
-    expect(screen.getAllByRole('link', { name: 'Apri in Moovit' })).toHaveLength(2);
+    expect(screen.getAllByTestId('bus-line')).toHaveLength(1);
+    expect(
+      screen.getAllByRole('link', { name: 'Apri orari e fermate' }),
+    ).toHaveLength(1);
     expect(
       screen.getAllByRole('link', { name: 'Apri in Google Maps' }),
-    ).toHaveLength(2);
+    ).toHaveLength(1);
     expect(screen.getAllByRole('listitem', { current: 'location' })).toHaveLength(
-      2,
+      1,
     );
+    expect(
+      screen.getByRole('dialog').querySelector('.transport-panel'),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('dialog').querySelector('.transport-extras'),
+    ).toBeTruthy();
   });
 
   test('opens health on pharmacies, switches to hospitals and resets on reopen', async () => {
@@ -177,15 +203,18 @@ describe('guest guide navigation', () => {
       'aria-pressed',
       'true',
     );
-    expect(screen.getAllByTestId('pharmacy-card')).toHaveLength(3);
+    expect(screen.getAllByTestId('pharmacy-card')).toHaveLength(1);
 
     await user.click(screen.getByRole('button', { name: 'Ospedali' }));
     expect(screen.getAllByTestId('hospital-card')).toHaveLength(2);
     expect(
-      screen.getByRole('link', {
+      screen.queryByRole('link', {
         name: 'Trova pronto soccorso nel Lazio',
       }),
-    ).toBeVisible();
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/non scegliere un ospedale soltanto in base alla distanza/),
+    ).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Chiudi' }));
     await user.click(screen.getByRole('button', { name: /Farmacie e ospedali/ }));
@@ -193,6 +222,21 @@ describe('guest guide navigation', () => {
       'aria-pressed',
       'true',
     );
+  });
+
+  test('opens an inline HOUSE review panel with a disabled placeholder button', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Check-out/ }));
+    await user.click(
+      screen.getByRole('button', { name: 'Lascia una recensione' }),
+    );
+
+    expect(screen.getByText(/prenotato tramite HOUSE/)).toBeVisible();
+    expect(
+      screen.getByRole('button', { name: 'Lascia recensione su HOUSE' }),
+    ).toBeDisabled();
   });
 
   test('replaces Location with Recycling and shows all seven collection days', async () => {
@@ -208,7 +252,25 @@ describe('guest guide navigation', () => {
     expect(screen.getAllByTestId('bin-icon')).toHaveLength(7);
   });
 
-  test('offers six Google series and downloads one Apple calendar file', async () => {
+  test('places the bell reminder before the schedule and highlights glass in red', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Raccolta' }));
+    const reminder = screen.getByRole('button', { name: 'Attiva promemoria' });
+    const firstDay = screen.getAllByTestId('recycling-day')[0];
+
+    expect(
+      reminder.compareDocumentPosition(firstDay) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(reminder.querySelector('[data-icon="calendar"]')).toBeTruthy();
+    expect(screen.getByText('vetro', { exact: false })).toHaveClass(
+      'glass-warning',
+    );
+  });
+
+  test('offers one Google series per collection day and downloads one Apple calendar file', async () => {
     const user = userEvent.setup();
     const createObjectURL = vi.fn(() => 'blob:recycling-calendar');
     const revokeObjectURL = vi.fn();
@@ -229,7 +291,7 @@ describe('guest guide navigation', () => {
     await user.click(screen.getByRole('button', { name: 'Attiva promemoria' }));
     await user.click(screen.getByRole('button', { name: 'Google Calendar' }));
     const googleLinks = screen.getAllByRole('link', { name: /Aggiungi/ });
-    expect(googleLinks).toHaveLength(6);
+    expect(googleLinks).toHaveLength(5);
     googleLinks.forEach((link) => {
       expect(new URL(link.href).hostname).toBe('calendar.google.com');
     });

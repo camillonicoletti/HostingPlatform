@@ -14,8 +14,7 @@ export const content = {
   links: {
     propertyMap:
       'https://www.google.com/maps/search/?api=1&query=Via%20Tullio%20Ascarelli%2C%2099%20-%20Roma',
-    review:
-      'https://www.google.com/search?q=%5BDA%20PERSONALIZZARE%5D%20link%20recensione',
+    review: '',
   },
   healthLinks: {
     openPharmacies:
@@ -276,6 +275,9 @@ export const content = {
           ],
           contactHost: 'Contatta l’host',
           review: 'Lascia una recensione',
+          reviewPrompt:
+            'Se hai prenotato tramite HOUSE clicca qui per lasciare una recensione.',
+          reviewHouse: 'Lascia recensione su HOUSE',
         },
       ],
       emergency: {
@@ -550,6 +552,9 @@ export const content = {
           ],
           contactHost: 'Contact the host',
           review: 'Leave a review',
+          reviewPrompt:
+            'If you booked through HOUSE, click here to leave a review.',
+          reviewHouse: 'Leave a review on HOUSE',
         },
       ],
       emergency: {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Icon from './Icon';
 import CheckinPhoto from './CheckinPhoto';
 import HealthPanel from './HealthPanel';
@@ -128,6 +129,8 @@ function UsefulNumbersPanel({ items }) {
 }
 
 function Checkout({ section, guide }) {
+  const [showReview, setShowReview] = useState(false);
+
   return (
     <>
       <dl className="details-list details-list--compact">
@@ -146,10 +149,29 @@ function Checkout({ section, guide }) {
         <ExternalLink href={guide.contacts.whatsappUrl}>
           {section.contactHost}
         </ExternalLink>
-        <ExternalLink href={guide.links.review} className="action-link secondary">
+        <button
+          className="action-link secondary"
+          type="button"
+          aria-expanded={showReview}
+          onClick={() => setShowReview(true)}
+        >
           {section.review}
-        </ExternalLink>
+        </button>
       </div>
+      {showReview ? (
+        <div className="review-panel">
+          <p>{section.reviewPrompt}</p>
+          {guide.links.review ? (
+            <ExternalLink href={guide.links.review} className="action-link">
+              {section.reviewHouse}
+            </ExternalLink>
+          ) : (
+            <button className="action-link" type="button" disabled>
+              {section.reviewHouse}
+            </button>
+          )}
+        </div>
+      ) : null}
     </>
   );
 }

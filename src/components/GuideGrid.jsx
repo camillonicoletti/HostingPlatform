@@ -16,7 +16,6 @@ export default function GuideGrid({ sections, openSectionLabel, onOpen }) {
           <Icon name={section.id} className="guide-card__icon" />
           <span className="guide-card__copy">
             <strong>{section.title}</strong>
-            <small>{section.subtitle}</small>
           </span>
           <Icon name="arrow" className="guide-card__arrow" />
         </button>

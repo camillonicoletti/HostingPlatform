@@ -11,7 +11,7 @@ function ExternalLink({ href, children, className = 'text-link' }) {
 
 export default function TransportPanel({ section, guide, children }) {
   return (
-    <>
+    <div className="transport-panel">
       <div className="bus-lines">
         {section.lines.map((line) => (
           <article
@@ -55,7 +55,7 @@ export default function TransportPanel({ section, guide, children }) {
           </article>
         ))}
       </div>
-      {children}
-    </>
+      <div className="transport-extras">{children}</div>
+    </div>
   );
 }

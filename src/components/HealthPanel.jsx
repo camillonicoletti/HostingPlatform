@@ -78,14 +78,7 @@ export default function HealthPanel({ section, guide }) {
         <ExternalLink href={guide.healthLinks.openPharmacies} className="action-link">
           {section.openPharmacies}
         </ExternalLink>
-      ) : (
-        <>
-          <ExternalLink href={guide.healthLinks.emergencyRooms} className="action-link">
-            {section.emergencyRooms}
-          </ExternalLink>
-          <p className="health-emergency-note">{section.emergencyNote}</p>
-        </>
-      )}
+      ) : null}
     </div>
   );
 }

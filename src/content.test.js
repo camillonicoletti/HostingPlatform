@@ -10,37 +10,37 @@ describe('guest guide content', () => {
       'checkin',
       'wifi',
       'rules',
-      'food',
+      'groceries',
       'transport',
       'health',
-      'groceries',
+      'food',
       'checkout',
     ]);
     expect(en?.sections.map((section) => section.id)).toEqual([
       'checkin',
       'wifi',
       'rules',
-      'food',
+      'groceries',
       'transport',
       'health',
-      'groceries',
+      'food',
       'checkout',
     ]);
     expect(it?.welcome).not.toBe(en?.welcome);
     expect(it.sections.find(({ id }) => id === 'food').title).toBe(
-      'Dove mangiare nei dintorni',
+      'Banche e Ufficio postale',
     );
     expect(en.sections.find(({ id }) => id === 'food').title).toBe(
-      'Where to eat nearby',
+      'Banks and Post Office',
     );
     expect(it.sections.find(({ id }) => id === 'transport').lines).toHaveLength(
-      2,
+      1,
     );
     expect(en.sections.find(({ id }) => id === 'transport').lines).toHaveLength(
-      2,
+      1,
     );
     expect(it.sections.find(({ id }) => id === 'health').pharmacies).toHaveLength(
-      3,
+      1,
     );
     expect(it.sections.find(({ id }) => id === 'health').hospitals).toHaveLength(
       2,
@@ -51,6 +51,13 @@ describe('guest guide content', () => {
     );
     expect(it.sections.find(({ id }) => id === 'health').emergencyRooms).toBe(
       'Trova pronto soccorso nel Lazio',
+    );
+    expect(it.links.review).toBe('');
+    expect(it.sections.find(({ id }) => id === 'checkout').reviewPrompt).toContain(
+      'HOUSE',
+    );
+    expect(en.sections.find(({ id }) => id === 'checkout').reviewHouse).toBe(
+      'Leave a review on HOUSE',
     );
     expect(it.recycling.schedule).toHaveLength(7);
     expect(en.recycling.schedule).toHaveLength(7);
