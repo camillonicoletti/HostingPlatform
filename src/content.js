@@ -319,7 +319,7 @@ export const content = {
         title: 'Raccolta differenziata',
         intro: 'Calendario settimanale dei ritiri sotto casa.',
         demoNote:
-          'Chiudi accuratamente i sacchetti e depositali la sera precedente fuori dal portoncino sulla strada. IL VETRO non viene raccolto porta a porta: uscendo dal portone gira a destra e usa l’apposito contenitore comunale poco più avanti.',
+          'Chiudi accuratamente i sacchetti e depositali la sera precedente fuori dal portoncino sulla strada. Il VETRO non viene raccolto porta a porta: uscendo dal portone gira a destra e usa l’apposito contenitore comunale poco più avanti.',
         reminder: 'Attiva promemoria',
         closeReminder: 'Chiudi promemoria',
         reminderIntro: 'Scegli il calendario che usi sul telefono.',

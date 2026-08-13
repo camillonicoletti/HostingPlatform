@@ -1039,7 +1039,6 @@ a:focus-visible {
 .glass-warning {
   color: #c52f2f;
   font-weight: 900;
-  text-transform: uppercase;
 }
 
 .reminder-panel {
