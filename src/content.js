@@ -56,8 +56,8 @@ export const content = {
           address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
           checkIn: 'Ricordati di comunicare all’Host l’orario del tuo arrivo a casa.',
-          housePhoto: '',
-          housePhotoAlt: '[DA PERSONALIZZARE] Facciata di LA MIA CASA',
+          housePhoto: '/img_casa.jpg',
+          housePhotoAlt: 'Ingresso della casa al civico 99',
           housePhotoFallback: 'Foto della casa in arrivo',
           instructionsLabel: 'Come entrare',
           instructions:
@@ -366,8 +366,8 @@ export const content = {
           address: 'Via Tullio Ascarelli, 99 - Roma',
           checkInLabel: 'Check-in',
           checkIn: 'Remember to tell the Host what time you will arrive at the house.',
-          housePhoto: '',
-          housePhotoAlt: '[DA PERSONALIZZARE] LA MIA CASA exterior',
+          housePhoto: '/img_casa.jpg',
+          housePhotoAlt: 'House entrance at number 99',
           housePhotoFallback: 'House photo coming soon',
           instructionsLabel: 'How to enter',
           instructions:

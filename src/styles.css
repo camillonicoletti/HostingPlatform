@@ -506,7 +506,7 @@ a:focus-visible {
 
 .checkin-photo {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 6 / 7;
   margin: 16px 0;
   overflow: hidden;
   border: 1px dashed rgba(169, 78, 52, 0.32);

@@ -46,6 +46,14 @@ describe('guest guide content', () => {
       2,
     );
     expect(it.contacts.whatsappUrl).toBe('https://wa.me/393477005683');
+    const italianCheckin = it.sections.find(({ id }) => id === 'checkin');
+    const englishCheckin = en.sections.find(({ id }) => id === 'checkin');
+    expect(italianCheckin.housePhoto).toBe('/img_casa.jpg');
+    expect(italianCheckin.housePhotoAlt).toBe(
+      'Ingresso della casa al civico 99',
+    );
+    expect(englishCheckin.housePhoto).toBe('/img_casa.jpg');
+    expect(englishCheckin.housePhotoAlt).toBe('House entrance at number 99');
     expect(it.healthLinks.openPharmacies).toBe(
       'https://www.federfarmaroma.com/farmacie_aperte.php',
     );

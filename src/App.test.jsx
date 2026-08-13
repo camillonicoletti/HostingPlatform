@@ -157,17 +157,24 @@ describe('guest guide navigation', () => {
     expect(mapLink).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
   });
 
-  test('places the house photo placeholder before the entry instructions', async () => {
+  test('places the real house photo before the entry instructions', async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: /Check-in/ }));
 
-    const photo = screen.getByText('Foto della casa in arrivo');
+    const photo = screen.getByRole('img', {
+      name: 'Ingresso della casa al civico 99',
+    });
     const instructions = screen.getByText('Come entrare');
+
+    expect(photo).toHaveAttribute('src', '/img_casa.jpg');
     expect(
       photo.compareDocumentPosition(instructions) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
+    expect(
+      screen.queryByText('Foto della casa in arrivo'),
+    ).not.toBeInTheDocument();
   });
 
   test('shows the configured bus line in a compact transport panel', async () => {
