@@ -40,6 +40,11 @@ export default function RecyclingPanel({ recycling, onCalendarError }) {
     description: recycling.calendarDescription,
   };
 
+  const toggleChoices = () => {
+    if (showChoices) setShowGoogle(false);
+    setShowChoices(!showChoices);
+  };
+
   const downloadAppleCalendar = () => {
     try {
       const calendar = buildIcsCalendar(recycling.schedule, labels);
@@ -62,13 +67,15 @@ export default function RecyclingPanel({ recycling, onCalendarError }) {
       <button
         className="primary-button recycling-reminder"
         type="button"
-        onClick={() => setShowChoices(true)}
+        aria-expanded={showChoices}
+        aria-controls="recycling-reminder-options"
+        onClick={toggleChoices}
       >
-        <Icon name="calendar" />
-        {recycling.reminder}
+        <Icon name={showChoices ? 'close' : 'calendar'} />
+        {showChoices ? recycling.closeReminder : recycling.reminder}
       </button>
       {showChoices ? (
-        <div className="reminder-panel">
+        <div className="reminder-panel" id="recycling-reminder-options">
           <p>{recycling.reminderIntro}</p>
           <div className="reminder-actions">
             <button type="button" onClick={downloadAppleCalendar}>

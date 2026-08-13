@@ -63,6 +63,9 @@ describe('guest guide content', () => {
       .find(({ id }) => id === 'transport')
       .contacts.find(({ name }) => name === 'App ATAC Roma').actions;
     expect(atacActions.map(({ store }) => store)).toEqual(['apple', 'google']);
+    expect(it.recycling.closeReminder).toBe('Chiudi promemoria');
+    expect(en.recycling.reminder).toBe('Enable reminders');
+    expect(en.recycling.closeReminder).toBe('Close reminders');
     expect(it.recycling.schedule).toHaveLength(7);
     expect(en.recycling.schedule).toHaveLength(7);
   });

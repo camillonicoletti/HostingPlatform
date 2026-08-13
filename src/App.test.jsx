@@ -291,7 +291,7 @@ describe('guest guide navigation', () => {
     expect(screen.getAllByTestId('bin-icon')).toHaveLength(7);
   });
 
-  test('places the bell reminder before the schedule and highlights glass in red', async () => {
+  test('toggles the reminder choices and restores the bell when closed', async () => {
     const user = userEvent.setup();
     render(<App />);
 
@@ -303,10 +303,32 @@ describe('guest guide navigation', () => {
       reminder.compareDocumentPosition(firstDay) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
+    expect(reminder).toHaveAttribute('aria-expanded', 'false');
     expect(reminder.querySelector('[data-icon="calendar"]')).toBeTruthy();
     expect(screen.getByText('vetro', { exact: false })).toHaveClass(
       'glass-warning',
     );
+
+    await user.click(reminder);
+
+    expect(reminder).toHaveAccessibleName('Chiudi promemoria');
+    expect(reminder).toHaveAttribute('aria-expanded', 'true');
+    expect(reminder).toHaveAttribute(
+      'aria-controls',
+      'recycling-reminder-options',
+    );
+    expect(reminder.querySelector('.icon')).toHaveTextContent('×');
+    expect(
+      screen.getByText('Scegli il calendario che usi sul telefono.'),
+    ).toBeVisible();
+
+    await user.click(reminder);
+
+    expect(reminder).toHaveAccessibleName('Attiva promemoria');
+    expect(reminder).toHaveAttribute('aria-expanded', 'false');
+    expect(
+      screen.queryByText('Scegli il calendario che usi sul telefono.'),
+    ).not.toBeInTheDocument();
   });
 
   test('offers one Google series per collection day and downloads one Apple calendar file', async () => {

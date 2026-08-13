@@ -315,6 +315,7 @@ export const content = {
         demoNote:
           'Chiudi accuratamente i sacchetti e depositali la sera precedente fuori dal portoncino sulla strada. Il vetro non viene raccolto porta a porta: uscendo dal portone gira a destra e usa l’apposito contenitore comunale poco più avanti.',
         reminder: 'Attiva promemoria',
+        closeReminder: 'Chiudi promemoria',
         reminderIntro: 'Scegli il calendario che usi sul telefono.',
         apple: 'Apple / iPhone',
         google: 'Google Calendar',
@@ -597,7 +598,8 @@ export const content = {
         intro: 'Weekly collection schedule outside the house.',
         demoNote:
           'Close the bags carefully and put them outside the street entrance on the evening before collection. Glass is not collected door to door: turn right when leaving the entrance and use the municipal glass container a little further along the road.',
-        reminder: 'Set reminders',
+        reminder: 'Enable reminders',
+        closeReminder: 'Close reminders',
         reminderIntro: 'Choose the calendar you use on your phone.',
         apple: 'Apple / iPhone',
         google: 'Google Calendar',
