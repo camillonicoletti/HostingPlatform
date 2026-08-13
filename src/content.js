@@ -269,7 +269,7 @@ export const content = {
           title: 'Check-out',
           subtitle: 'Prima di partire',
           timeLabel: 'Orario',
-          time: 'Ricordati di comunicare all’Host il giorno e l’ora in cui lascerai la casa almeno una settimana prima.',
+          time: 'Ricordati di comunicare all’Host il giorno e l’ora in cui lascerai la casa.',
           tasksLabel: 'Un ultimo controllo',
           tasks: [
             'Ricordati di lasciare le chiavi come concordato con l’Host. Il deposito ti verrà restituito entro 45 giorni dal check-out.',
@@ -543,7 +543,7 @@ export const content = {
           title: 'Check-out',
           subtitle: 'Before you leave',
           timeLabel: 'Time',
-          time: 'Remember to tell the Host the day and time you will leave the house at least one week in advance.',
+          time: 'Remember to tell the Host the day and time you will leave the house.',
           tasksLabel: 'One last check',
           tasks: [
             'Remember to leave the keys as agreed with the Host. Your deposit will be returned within 45 days of check-out.',
