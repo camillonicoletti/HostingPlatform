@@ -81,6 +81,10 @@ export const content = {
               text: 'Mantenere sempre un comportamento educato e rispettoso. Evitare schiamazzi, musica ad alto volume e rumori molesti, soprattutto nelle ore serali e notturne. Rispettare la privacy degli altri ospiti.',
             },
             {
+              title: 'Raccolta dei rifiuti',
+              text: 'La raccolta dei rifiuti deve essere effettuata correttamente seguendo il calendario indicato. Se non effettuata correttamente gli addetti alla raccolta del Comune di Roma potranno fare delle multe che verranno addebitate agli ospiti della casa indipendentemente da chi ha sbagliato, quindi ogni ospite è responsabile per la corretta raccolta.',
+            },
+            {
               title: 'Pulizia della propria stanza',
               text: 'Ogni ospite è tenuto a mantenere la propria camera in ordine e pulita durante il soggiorno. Non lasciare cibo deperibile o rifiuti all’interno della stanza. Prima della partenza verificare di non aver dimenticato effetti personali.',
             },
@@ -106,7 +110,7 @@ export const content = {
             },
             {
               title: 'Cura dell’immobile',
-              text: 'Trattare con cura arredi, elettrodomestici e dotazioni della casa. Eventuali danni devono essere comunicati tempestivamente. È vietato spostare mobili senza autorizzazione. È obbligatorio rispettare le regole per la raccolta della spazzatura come da calendario. Qualsiasi problema relativo alla casa, come guasti, malfunzionamenti o situazioni particolari, deve essere comunicato tempestivamente al proprietario, così da poter intervenire nel più breve tempo possibile.',
+              text: 'Trattare con cura arredi, elettrodomestici e dotazioni della casa. Eventuali danni devono essere comunicati tempestivamente. È vietato spostare mobili senza autorizzazione. Qualsiasi problema relativo alla casa, come guasti, malfunzionamenti o situazioni particolari, deve essere comunicato tempestivamente al proprietario, così da poter intervenire nel più breve tempo possibile.',
             },
           ],
         },
@@ -277,7 +281,8 @@ export const content = {
           time: 'Ricordati di comunicare all’Host il giorno e l’ora in cui lascerai la casa.',
           tasksLabel: 'Un ultimo controllo',
           tasks: [
-            'Ricordati di lasciare le chiavi come concordato con l’Host. Il deposito ti verrà restituito entro 45 giorni dal check-out.',
+            'Ricordati di lasciare le chiavi come concordato con l’Host.',
+            'Il deposito ti verrà restituito entro 45 giorni dal check-out.',
           ],
           contactHost: 'Contatta l’host',
           review: 'Lascia una recensione',
@@ -391,6 +396,10 @@ export const content = {
               text: 'Always behave politely and respectfully. Avoid shouting, loud music and disturbing noise, especially in the evening and at night. Respect the privacy of other guests.',
             },
             {
+              title: 'Waste collection',
+              text: 'Waste must be collected correctly according to the indicated schedule. If it is not done correctly, Rome City Council waste collection staff may issue fines that will be charged to the guests of the house regardless of who made the mistake; therefore, every guest is responsible for correct waste collection.',
+            },
+            {
               title: 'Keeping your room clean',
               text: 'Each guest must keep their room tidy and clean during their stay. Do not leave perishable food or rubbish in the room. Before leaving, check that you have not forgotten any personal belongings.',
             },
@@ -416,7 +425,7 @@ export const content = {
             },
             {
               title: 'Care of the property',
-              text: 'Treat the furniture, appliances and household equipment with care. Report any damage promptly. Do not move furniture without permission. You must follow the waste collection rules shown on the schedule. Any problem involving the property, including faults, malfunctions or unusual situations, must be reported promptly to the owner so that it can be dealt with as quickly as possible.',
+              text: 'Treat the furniture, appliances and household equipment with care. Report any damage promptly. Do not move furniture without permission. Any problem involving the property, including faults, malfunctions or unusual situations, must be reported promptly to the owner so that it can be dealt with as quickly as possible.',
             },
           ],
         },
@@ -562,7 +571,8 @@ export const content = {
           time: 'Remember to tell the Host the day and time you will leave the house.',
           tasksLabel: 'One last check',
           tasks: [
-            'Remember to leave the keys as agreed with the Host. Your deposit will be returned within 45 days of check-out.',
+            'Remember to leave the keys as agreed with the Host.',
+            'Your deposit will be returned within 45 days of check-out.',
           ],
           contactHost: 'Contact the host',
           review: 'Leave a review',
