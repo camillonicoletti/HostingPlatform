@@ -181,8 +181,14 @@ export const content = {
               description: 'Consulta trasporti pubblici, fermate, orari e tempi di arrivo a Roma.',
               actions: [
                 {
-                  label: 'Scarica App ATAC Roma',
-                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                  label: 'Scarica su App Store',
+                  href: 'https://apps.apple.com/it/app/atac-roma/id1544302659',
+                  store: 'apple',
+                },
+                {
+                  label: 'Scarica su Google Play',
+                  href: 'https://play.google.com/store/apps/details?id=it.roma.atac.mobile&pcampaignid=web_share',
+                  store: 'google',
                 },
               ],
             },
@@ -483,8 +489,14 @@ export const content = {
               description: 'Check public transport, stops, schedules and arrival times in Rome.',
               actions: [
                 {
-                  label: 'Download ATAC Roma App',
-                  href: 'https://www.atac.roma.it/biglietti-e-abbonamenti/app-atac-roma',
+                  label: 'Download on the App Store',
+                  href: 'https://apps.apple.com/it/app/atac-roma/id1544302659',
+                  store: 'apple',
+                },
+                {
+                  label: 'Get it on Google Play',
+                  href: 'https://play.google.com/store/apps/details?id=it.roma.atac.mobile&pcampaignid=web_share',
+                  store: 'google',
                 },
               ],
             },

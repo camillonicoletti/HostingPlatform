@@ -194,6 +194,45 @@ describe('guest guide navigation', () => {
     ).toBeTruthy();
   });
 
+  test('shows separate ATAC store badges with the official destinations', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Trasporti/ }));
+
+    const apple = screen.getByRole('link', { name: 'Scarica su App Store' });
+    const google = screen.getByRole('link', {
+      name: 'Scarica su Google Play',
+    });
+
+    expect(apple).toHaveAttribute(
+      'href',
+      'https://apps.apple.com/it/app/atac-roma/id1544302659',
+    );
+    expect(google).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=it.roma.atac.mobile&pcampaignid=web_share',
+    );
+    expect(apple).toHaveClass('store-badge');
+    expect(google).toHaveClass('store-badge');
+    expect(apple).not.toHaveTextContent('↗');
+    expect(google).not.toHaveTextContent('↗');
+    expect(
+      screen.queryByRole('link', { name: 'Scarica App ATAC Roma' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('isolates the ATAC store badge layout from the other transport links', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Trasporti/ }));
+
+    const atacCard = screen.getByText('App ATAC Roma').closest('.useful-card');
+    expect(atacCard).toHaveClass('has-store-badges');
+    expect(atacCard.querySelector('.store-badges')).toBeTruthy();
+  });
+
   test('opens health on pharmacies, switches to hospitals and resets on reopen', async () => {
     const user = userEvent.setup();
     render(<App />);
