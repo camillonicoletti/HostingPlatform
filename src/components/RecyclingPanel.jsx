@@ -18,7 +18,7 @@ function BinIcon({ kind }) {
 }
 
 function RecyclingNotice({ text }) {
-  const match = text.match(/^(.*?)(il\s+)?(vetro|glass)(.*)$/i);
+  const match = text.match(/^(.*?)(il\s+|le\s+)?(vetro|glass|verre)(.*)$/i);
 
   if (!match) return text;
 

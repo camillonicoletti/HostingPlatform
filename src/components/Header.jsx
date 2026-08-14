@@ -27,6 +27,14 @@ export default function Header({
         >
           EN
         </button>
+        <button
+          type="button"
+          aria-label="Français"
+          aria-pressed={language === 'fr'}
+          onClick={() => onLanguageChange('fr')}
+        >
+          FR
+        </button>
       </div>
       <div className="hero__brand">
         <h1>{brand.name}</h1>

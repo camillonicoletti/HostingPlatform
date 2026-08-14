@@ -2,6 +2,32 @@ import { describe, expect, test } from 'vitest';
 import { getLocalizedContent } from './content';
 
 describe('guest guide content', () => {
+  test('returns complete French content for every guest flow', () => {
+    const fr = getLocalizedContent('fr');
+
+    expect(fr.languageCode).toBe('fr');
+    expect(fr.welcome).toContain('Bienvenue');
+    expect(fr.sections.map((section) => section.id)).toEqual([
+      'checkin',
+      'wifi',
+      'rules',
+      'groceries',
+      'transport',
+      'health',
+      'food',
+      'checkout',
+    ]);
+    expect(fr.sections.find(({ id }) => id === 'health').title).toBe(
+      'Pharmacies et hôpitaux',
+    );
+    expect(fr.sections.find(({ id }) => id === 'health').hospitals).toHaveLength(
+      2,
+    );
+    expect(fr.recycling.reminder).toBe('Activer les rappels');
+    expect(fr.recycling.demoNote).toContain('Le VERRE');
+    expect(fr.recycling.schedule).toHaveLength(7);
+  });
+
   test('returns complete, distinct Italian and English content', () => {
     const it = getLocalizedContent('it');
     const en = getLocalizedContent('en');
@@ -60,12 +86,14 @@ describe('guest guide content', () => {
     expect(it.sections.find(({ id }) => id === 'health').emergencyRooms).toBe(
       'Trova pronto soccorso nel Lazio',
     );
-    expect(it.links.review).toBe('');
+    expect(it.links.review).toBe(
+      'https://housinganywhere.com/it/room/ut1483360/it/Rome/via-tullio-ascarelli',
+    );
     expect(it.sections.find(({ id }) => id === 'checkout').reviewPrompt).toContain(
-      'HOUSE',
+      'Housing Anywhere',
     );
     expect(en.sections.find(({ id }) => id === 'checkout').reviewHouse).toBe(
-      'Leave a review on HOUSE',
+      'Leave a review on Housing Anywhere',
     );
     expect(it.sections.find(({ id }) => id === 'checkout').closeReview).toBe(
       'Chiudi recensione',

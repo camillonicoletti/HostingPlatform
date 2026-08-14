@@ -22,6 +22,20 @@ describe('guest guide navigation', () => {
     expect(localStorage.getItem('guest-guide-language')).toBe('en');
   });
 
+  test('switches the full guide to French and persists the choice', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Français' }));
+
+    expect(screen.getByText('Règles de la maison')).toBeVisible();
+    expect(document.documentElement).toHaveAttribute('lang', 'fr');
+    expect(localStorage.getItem('guest-guide-language')).toBe('fr');
+
+    await user.click(screen.getByRole('button', { name: 'Tri des déchets' }));
+    expect(screen.getByText(/^VERRE$/)).toHaveClass('glass-warning');
+  });
+
   test('applies a stored language to the document on first render', () => {
     localStorage.setItem('guest-guide-language', 'en');
     document.documentElement.lang = 'it';
@@ -73,7 +87,7 @@ describe('guest guide navigation', () => {
   test.each([
     'Check-in',
     'Wi-Fi',
-    'Regole casa',
+    'Regole della casa',
     'Supermercati',
     'Trasporti',
     'Farmacie e ospedali',
@@ -276,7 +290,7 @@ describe('guest guide navigation', () => {
     );
   });
 
-  test('opens and closes the inline HOUSE review panel', async () => {
+  test('opens and closes the inline Housing Anywhere review panel', async () => {
     const user = userEvent.setup();
     render(<App />);
 
@@ -293,10 +307,15 @@ describe('guest guide navigation', () => {
       'aria-controls',
       'checkout-review-panel',
     );
-    expect(screen.getByText(/prenotato tramite HOUSE/)).toBeVisible();
+    expect(screen.getByText(/prenotato tramite Housing Anywhere/)).toBeVisible();
     expect(
-      screen.getByRole('button', { name: 'Lascia recensione su HOUSE' }),
-    ).toBeDisabled();
+      screen.getByRole('link', {
+        name: 'Lascia recensione su Housing Anywhere',
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://housinganywhere.com/it/room/ut1483360/it/Rome/via-tullio-ascarelli',
+    );
 
     const closeReview = screen.getByRole('button', {
       name: 'Chiudi recensione',
@@ -306,7 +325,7 @@ describe('guest guide navigation', () => {
 
     expect(reviewButton).toHaveAttribute('aria-expanded', 'false');
     expect(
-      screen.queryByText(/prenotato tramite HOUSE/),
+      screen.queryByText(/prenotato tramite Housing Anywhere/),
     ).not.toBeInTheDocument();
   });
 

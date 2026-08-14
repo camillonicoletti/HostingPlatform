@@ -8,11 +8,12 @@ import Sheet from './components/Sheet';
 import Toast from './components/Toast';
 
 const LANGUAGE_KEY = 'guest-guide-language';
+const SUPPORTED_LANGUAGES = ['it', 'en', 'fr'];
 
 function readStoredLanguage() {
   try {
     const stored = localStorage.getItem(LANGUAGE_KEY);
-    return stored === 'en' ? 'en' : 'it';
+    return SUPPORTED_LANGUAGES.includes(stored) ? stored : 'it';
   } catch {
     return 'it';
   }

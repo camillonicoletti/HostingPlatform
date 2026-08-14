@@ -631,6 +631,377 @@ export const content = {
         ],
       },
     },
+    fr: {
+      languageCode: 'fr',
+      languageName: 'Français',
+      languageSelectorLabel: 'Langue · Language',
+      welcome:
+        'Bienvenue. Vous trouverez ici tout ce dont vous avez besoin pour profiter facilement de la maison et de la ville.',
+      eyebrow: 'Votre maison, à portée de main',
+      guidePrompt: 'Comment pouvons-nous vous aider ?',
+      openSection: 'Ouvrir la section',
+      close: 'Fermer',
+      maps: 'Ouvrir dans Google Maps',
+      copyPassword: 'Copier le mot de passe',
+      copyPasswordSuccess: 'Accès copié',
+      passwordCopied: 'Mot de passe copié',
+      copyFailed:
+        'Échec de la copie : veuillez sélectionner le mot de passe manuellement.',
+      quickActionsLabel: 'Actions rapides',
+      quickActions: {
+        whatsapp: 'WhatsApp de l’hôte',
+        recycling: 'Tri des déchets',
+        emergency: 'Urgences',
+      },
+      sections: [
+        {
+          id: 'checkin',
+          title: 'Check-in',
+          subtitle: 'Arrivée et accès',
+          addressLabel: 'Adresse',
+          address: 'Via Tullio Ascarelli, 99 - Roma',
+          checkInLabel: 'Check-in',
+          checkIn:
+            'N’oubliez pas d’indiquer à l’hôte l’heure de votre arrivée à la maison.',
+          housePhoto: '/img_casa.jpg',
+          housePhotoAlt: 'Entrée de la maison au numéro 99',
+          housePhotoFallback: 'La photo de la maison sera bientôt disponible',
+          instructionsLabel: 'Comment entrer',
+          instructions:
+            'À votre arrivée, une personne vous accueillera et vous remettra les clés de la maison.',
+        },
+        {
+          id: 'wifi',
+          title: 'Wi-Fi',
+          subtitle: 'Réseau et mot de passe',
+          networkLabel: 'Nom du réseau',
+          passwordLabel: 'Mot de passe',
+          note: 'Le réseau est disponible dans toute la maison.',
+        },
+        {
+          id: 'rules',
+          title: 'Règles de la maison',
+          subtitle: 'Les règles essentielles',
+          items: [
+            {
+              title: 'Respect des autres',
+              text: 'Adoptez toujours un comportement poli et respectueux. Évitez les cris, la musique forte et les nuisances sonores, surtout le soir et la nuit. Respectez la vie privée des autres voyageurs.',
+            },
+            {
+              title: 'Tri des déchets',
+              text: 'Les déchets doivent être triés correctement selon le calendrier indiqué. En cas de tri incorrect, les agents de collecte de la Ville de Rome peuvent infliger des amendes qui seront facturées aux occupants de la maison, quelle que soit la personne responsable. Chaque voyageur doit donc veiller au bon tri des déchets.',
+            },
+            {
+              title: 'Propreté de votre chambre',
+              text: 'Chaque voyageur doit garder sa chambre propre et rangée pendant son séjour. Ne laissez ni aliments périssables ni déchets dans la chambre. Avant votre départ, vérifiez que vous n’avez oublié aucun effet personnel.',
+            },
+            {
+              title: 'Utilisation des espaces communs',
+              text: 'Les espaces communs sont à la disposition de tous les voyageurs. Merci de les laisser propres et rangés après chaque utilisation et de retirer vos effets personnels lorsque vous avez terminé.',
+            },
+            {
+              title: 'Cuisine',
+              text: 'Lavez, séchez et rangez la vaisselle, les casseroles et les ustensiles immédiatement après utilisation. Nettoyez le plan de travail et les appareils utilisés. Rangez vos aliments soigneusement en respectant les autres voyageurs. N’utilisez pas les aliments appartenant à quelqu’un d’autre.',
+            },
+            {
+              title: 'Salle de bains',
+              text: 'Laissez la salle de bains propre après chaque utilisation. Évitez de gaspiller l’eau. Ne jetez pas de lingettes, de protections hygiéniques ni d’autres objets inadaptés dans les toilettes.',
+            },
+            {
+              title: 'Sécurité',
+              text: 'Éteignez les lumières et les appareils électriques lorsqu’ils ne sont pas nécessaires ou avant de sortir. Fermez les portes et les fenêtres lorsque vous quittez le logement. Prenez soin des clés et ne les confiez à personne.',
+            },
+            {
+              title: 'Interdiction de fumer',
+              text: 'Il est interdit de fumer à l’intérieur du logement, y compris dans les chambres et les espaces communs. Vous pouvez fumer à l’extérieur, sur la terrasse.',
+            },
+            {
+              title: 'Respect du logement',
+              text: 'Prenez soin du mobilier, des appareils électroménagers et des équipements de la maison. Signalez rapidement tout dommage. Ne déplacez pas les meubles sans autorisation. Tout problème concernant le logement, notamment une panne, un dysfonctionnement ou une situation inhabituelle, doit être rapidement signalé au propriétaire afin qu’il puisse intervenir dans les meilleurs délais.',
+            },
+          ],
+        },
+        {
+          id: 'food',
+          title: 'Banques et bureau de poste',
+          subtitle: 'Banque et bureau de poste à proximité',
+          contacts: [
+            {
+              name: 'BCC Roma – Agenzia Massimina',
+              badge: 'Banque',
+              description: 'Via della Massimilla, 14 - Roma',
+              actions: [
+                { label: 'Appeler le 06 52866051', href: 'tel:0652866051' },
+                {
+                  label: 'Ouvrir dans Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=BCC%20Roma%20Agenzia%20Massimina%20Via%20della%20Massimilla%2014%20Roma',
+                },
+              ],
+            },
+            {
+              name: 'Poste Italiane – Ufficio Postale Roma 140',
+              badge: 'Bureau de poste',
+              description: 'Via della Massimilla, 75 - Roma',
+              actions: [
+                { label: 'Appeler le 06 6693562', href: 'tel:066693562' },
+                {
+                  label: 'Ouvrir dans Google Maps',
+                  href: 'https://www.google.com/maps/search/?api=1&query=Poste%20Italiane%20Roma%20140%20Via%20della%20Massimilla%2075%20Roma',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'transport',
+          title: 'Transports',
+          subtitle: 'Ligne de bus près de la maison',
+          stopLabel: 'Point de départ',
+          directionLabel: 'Direction',
+          frequencyLabel: 'Fréquence',
+          moovit: 'Voir les horaires et les arrêts',
+          lines: [
+            {
+              name: 'Ligne 906 · Près de chez moi',
+              color: '#a94e34',
+              stop: 'Via Tullio Ascarelli',
+              direction:
+                'Valle Aurelia (Metro A - FL3) / Casale Lumbroso-Fontebasso',
+              frequency: 'Consultez les horaires en temps réel',
+              stops: [
+                'Via Tullio Ascarelli',
+                'Valle Aurelia (Metro A - FL3)',
+                'Casale Lumbroso-Fontebasso',
+              ],
+              moovit:
+                'https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=906&pathCode=906R',
+              map: 'https://www.google.com/maps/search/?api=1&query=fermata%20bus%20906%20Via%20Tullio%20Ascarelli%20Roma',
+            },
+          ],
+          contacts: [
+            {
+              name: 'Taxi et ITTAXI',
+              badge: '06 3570',
+              description:
+                'Appelez le radiotaxi ou réservez avec l’application ITTAXI.',
+              actions: [
+                { label: 'Appeler le 06 3570', href: 'tel:063570' },
+                {
+                  label: 'Télécharger l’application ITTAXI',
+                  href: 'https://www.ittaxi.it/',
+                },
+              ],
+            },
+            {
+              name: 'Application ATAC Roma',
+              badge: 'iOS · Android',
+              description:
+                'Consultez les transports en commun, les arrêts, les horaires et les temps d’arrivée à Rome.',
+              actions: [
+                {
+                  label: 'Télécharger sur l’App Store',
+                  href: 'https://apps.apple.com/it/app/atac-roma/id1544302659',
+                  store: 'apple',
+                },
+                {
+                  label: 'Disponible sur Google Play',
+                  href: 'https://play.google.com/store/apps/details?id=it.roma.atac.mobile&pcampaignid=web_share',
+                  store: 'google',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'health',
+          title: 'Pharmacies et hôpitaux',
+          subtitle: 'Services de santé à proximité',
+          pharmaciesTab: 'Pharmacies',
+          hospitalsTab: 'Hôpitaux',
+          tabsLabel: 'Choisissez le type de service de santé',
+          openPharmacies: 'Trouver une pharmacie ouverte',
+          emergencyRooms: 'Trouver un service d’urgences dans le Latium',
+          emergencyNote:
+            'En cas d’urgence, appelez le 112 : ne choisissez pas un hôpital uniquement en fonction de la distance.',
+          phoneLabel: 'Téléphone',
+          pharmacies: [
+            {
+              name: 'Farmacia Buccella',
+              description: 'Via Aurelia, 1297 - Roma',
+              distance: 'Massimina–Casal Lumbroso',
+              phone: '+39 06 6618 0089',
+              map: 'https://www.google.com/maps/search/?api=1&query=Farmacia%20Buccella%20Via%20Aurelia%201297%20Roma',
+            },
+          ],
+          hospitals: [
+            {
+              name: 'Aurelia Hospital',
+              description:
+                'Via Aurelia, 860 - Roma · Service d’urgences DEA de niveau 1',
+              distance: 'Aurelia',
+              phone: '+39 06 6649 21',
+              map: 'https://www.google.com/maps/search/?api=1&query=Aurelia%20Hospital%20Via%20Aurelia%20860%20Roma',
+            },
+            {
+              name: 'Policlinico Universitario Agostino Gemelli IRCCS',
+              description:
+                'Largo Agostino Gemelli, 8 - Roma · Service d’urgences',
+              distance: 'Monte Mario',
+              phone: '+39 06 3015 1',
+              map: 'https://www.google.com/maps/search/?api=1&query=Policlinico%20Gemelli%20Largo%20Agostino%20Gemelli%208%20Roma',
+            },
+          ],
+        },
+        {
+          id: 'groceries',
+          title: 'Supermarchés',
+          subtitle: 'Supermarchés à Casal Lumbroso et Massimina',
+          items: [
+            {
+              name: 'Elite Supermercati',
+              description: 'Via della Massimilla, 4/6/8 - Roma',
+              distance: 'Massimina',
+              map: 'https://www.google.com/maps/search/?api=1&query=Elite%20Supermercati%20Via%20della%20Massimilla%204%206%208%20Roma',
+            },
+            {
+              name: 'Eurospin',
+              description: 'Via Aurelia, 1303 - Roma',
+              distance: 'Massimina',
+              map: 'https://www.google.com/maps/search/?api=1&query=Eurospin%20Via%20Aurelia%201303%20Roma',
+            },
+            {
+              name: 'Lidl',
+              description: 'Via Aurelia, 1311 - Roma',
+              distance: 'Massimina',
+              map: 'https://www.google.com/maps/search/?api=1&query=Lidl%20Via%20Aurelia%201311%20Roma',
+            },
+            {
+              name: 'Conad',
+              description: 'Via Vittorino Cannavina, 5 - Roma',
+              distance: 'Massimina',
+              map: 'https://www.google.com/maps/search/?api=1&query=Conad%20Via%20Vittorino%20Cannavina%205%20Roma',
+            },
+            {
+              name: 'Heaven Supermarket',
+              description: 'Via della Massimilla, 59/61 - Roma',
+              distance: 'Casal Lumbroso–Massimina',
+              map: 'https://www.google.com/maps/search/?api=1&query=Heaven%20Supermarket%20Via%20della%20Massimilla%2059%2061%20Roma',
+            },
+          ],
+        },
+        {
+          id: 'checkout',
+          title: 'Check-out',
+          subtitle: 'Avant votre départ',
+          timeLabel: 'Horaire',
+          time: 'N’oubliez pas d’indiquer à l’hôte le jour et l’heure de votre départ de la maison.',
+          tasksLabel: 'Une dernière vérification',
+          tasks: [
+            'N’oubliez pas de laisser les clés comme convenu avec l’hôte.',
+            'Votre dépôt de garantie vous sera restitué dans les 45 jours suivant le check-out.',
+          ],
+          contactHost: 'Contacter l’hôte',
+          review: 'Laisser un avis',
+          reviewPrompt:
+            'Si vous avez réservé avec Housing Anywhere, cliquez ici pour laisser un avis.',
+          reviewHouse: 'Laisser un avis sur Housing Anywhere',
+          closeReview: 'Fermer l’avis',
+        },
+      ],
+      emergency: {
+        title: 'Urgences',
+        intro:
+          'Appelez le 112 en cas d’urgence et le 116117 pour une assistance médicale non urgente en dehors des horaires habituels.',
+        contacts: [
+          {
+            name: 'Urgences',
+            badge: '112',
+            description: 'Numéro d’urgence unique européen.',
+            actions: [{ label: 'Appeler le 112', href: 'tel:112' }],
+          },
+          {
+            name: 'Service médical de garde',
+            badge: '116117',
+            description: 'Service de continuité des soins.',
+            hours: [
+              'Nuits en semaine et jours fériés : de 20 h 00 à 8 h 00.',
+              'Samedis et veilles de jours fériés : de 10 h 00 à 20 h 00.',
+              'Dimanches et jours fériés : de 8 h 00 à 20 h 00.',
+            ],
+            actions: [{ label: 'Appeler le 116117', href: 'tel:116117' }],
+          },
+        ],
+      },
+      recycling: {
+        title: 'Tri des déchets',
+        intro: 'Calendrier hebdomadaire des collectes devant la maison.',
+        demoNote:
+          'Fermez soigneusement les sacs et déposez-les dans la rue, devant la porte d’entrée, la veille au soir. Le VERRE n’est pas collecté en porte-à-porte : en sortant, tournez à droite et utilisez le conteneur municipal prévu à cet effet, un peu plus loin.',
+        reminder: 'Activer les rappels',
+        closeReminder: 'Fermer les rappels',
+        reminderIntro: 'Choisissez le calendrier utilisé sur votre téléphone.',
+        apple: 'Apple / iPhone',
+        google: 'Google Calendar',
+        addToGoogle: 'Ajouter',
+        noCollection: 'Aucune collecte',
+        calendarTitlePrefix: 'Collecte',
+        calendarDescription:
+          'Rappel du calendrier de tri des déchets de LA MIA CASA.',
+        calendarError:
+          'Calendrier indisponible : utilisez Google Calendar.',
+        schedule: [
+          {
+            weekday: 1,
+            day: 'Lundi',
+            material: 'Déchets organiques',
+            kind: 'organic',
+            collects: true,
+          },
+          {
+            weekday: 2,
+            day: 'Mardi',
+            material: 'Aucune collecte',
+            kind: 'none',
+            collects: false,
+          },
+          {
+            weekday: 3,
+            day: 'Mercredi',
+            material: 'Déchets organiques',
+            kind: 'organic',
+            collects: true,
+          },
+          {
+            weekday: 4,
+            day: 'Jeudi',
+            material: 'Déchets non recyclables',
+            kind: 'general',
+            collects: true,
+          },
+          {
+            weekday: 5,
+            day: 'Vendredi',
+            material: 'Papier et carton',
+            kind: 'paper',
+            collects: true,
+          },
+          {
+            weekday: 6,
+            day: 'Samedi',
+            material: 'Plastique et déchets organiques',
+            kind: 'plastic',
+            collects: true,
+          },
+          {
+            weekday: 0,
+            day: 'Dimanche',
+            material: 'Aucune collecte',
+            kind: 'none',
+            collects: false,
+          },
+        ],
+      },
+    },
   },
 };
 
