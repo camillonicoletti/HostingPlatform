@@ -18,15 +18,16 @@ function BinIcon({ kind }) {
 }
 
 function RecyclingNotice({ text }) {
-  const match = text.match(/^(.*?)(il vetro|glass)(.*)$/i);
+  const match = text.match(/^(.*?)(il\s+)?(vetro|glass)(.*)$/i);
 
   if (!match) return text;
 
   return (
     <>
       {match[1]}
-      <strong className="glass-warning">{match[2]}</strong>
-      {match[3]}
+      {match[2]}
+      <strong className="glass-warning">{match[3]}</strong>
+      {match[4]}
     </>
   );
 }
