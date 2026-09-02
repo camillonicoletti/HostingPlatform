@@ -116,6 +116,7 @@ describe('guest guide navigation', () => {
     await user.click(screen.getByRole('button', { name: /Wi-Fi/ }));
     await user.click(screen.getByRole('button', { name: 'Copia password' }));
 
+    expect(writeText).toHaveBeenCalledWith('92632994574442258189');
     expect(await screen.findByRole('status')).toHaveTextContent(
       'Password copiata',
     );
@@ -125,6 +126,17 @@ describe('guest guide navigation', () => {
     expect(screen.getByTestId('wifi-password')).toHaveClass('is-scrambling');
     expect(screen.getByTestId('wifi-password')).not.toHaveTextContent(
       'Password Wi-Fi',
+    );
+  });
+
+  test('shows the configured Wi-Fi network name', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /Wi-Fi/ }));
+
+    expect(screen.getByRole('dialog')).toHaveTextContent(
+      'FRITZ!BOX 6850 0B',
     );
   });
 

@@ -22,8 +22,8 @@ export const content = {
     emergencyRooms: 'https://www.salutelazio.it/pronto-soccorso',
   },
   wifi: {
-    network: '[DA PERSONALIZZARE] Nome rete Wi-Fi',
-    password: '[DA PERSONALIZZARE] Password Wi-Fi',
+    network: 'FRITZ!BOX 6850 0B',
+    password: '92632994574442258189',
   },
   locale: {
     it: {
